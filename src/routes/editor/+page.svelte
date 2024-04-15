@@ -1,6 +1,7 @@
 <script>
 	import { marked } from 'marked';
-	import { ButtonGroup, Button, Modal } from 'flowbite-svelte';
+	import { ButtonGroup, Button, Modal, Textarea } from 'flowbite-svelte';
+
 	import {
 		UserCircleSolid,
 		ExclamationCircleOutline,
@@ -8,6 +9,13 @@
 		ClipboardSolid
 	} from 'flowbite-svelte-icons';
 
+	let textareaprops = {
+		id: 'message',
+		name: 'message',
+		label: 'Your message',
+		rows: 4,
+		placeholder: 'Enter markdown here'
+	};
 	let popupModal = false;
 	let markdown = '';
 	let style = `
@@ -1140,7 +1148,7 @@
 
 <div class="flex gap-6 justify-between max-w-7xl mx-auto mt-6">
 	<!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
-	<textarea bind:value={markdown} placeholder="Enter markdown here" class="w-full" />
+	<Textarea {...textareaprops} bind:value={markdown} class="w-full" />
 
 	<!-- Convert the markdown to HTML and display it -->
 	<div class="markdown-body w-full rounded-lg border">
