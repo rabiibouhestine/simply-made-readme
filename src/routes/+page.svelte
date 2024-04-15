@@ -20,11 +20,7 @@
 			<p class="text-sm text-slate-600">No Email Required</p>
 		</div>
 	</div>
-	<img
-		src="https://readme.so/_next/image?url=%2Fscreenshot.png&w=3840&q=75"
-		alt="editor screenshot"
-		class="rounded-lg max-w-6xl mx-auto"
-	/>
+	<img src="/editor.png" alt="editor screenshot" class="border rounded-lg max-w-6xl mx-auto" />
 	<p class="flex gap-1">
 		Made with <span class="text-red-500">♡</span> by
 		<a href="https://rabiibouhestine.com" target="_blank" class="text-primary-600 hover:underline">
