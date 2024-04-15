@@ -1124,7 +1124,7 @@
     `;
 </script>
 
-<div class="flex justify-between max-w-7xl mx-auto bg-slate-300 rounded-lg p-1">
+<div class="flex justify-between max-w-7xl mx-auto bg-gray-100 rounded-lg p-1">
 	<Button>
 		<UserCircleSolid class="w-3 h-3 me-2" />
 		New Readme
@@ -1141,11 +1141,13 @@
 	</ButtonGroup>
 </div>
 
-<!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
-<textarea bind:value={markdown} placeholder="Enter markdown here" />
+<div class="flex gap-6 justify-between max-w-7xl mx-auto mt-6">
+	<!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
+	<textarea bind:value={markdown} placeholder="Enter markdown here" class="w-full" />
 
-<!-- Convert the markdown to HTML and display it -->
-<div class="markdown-body max-w-6xl mx-auto rounded-lg border">
-	{@html style}
-	{@html marked(markdown)}
+	<!-- Convert the markdown to HTML and display it -->
+	<div class="markdown-body w-full rounded-lg border">
+		{@html style}
+		{@html marked(markdown)}
+	</div>
 </div>
