@@ -1,4 +1,12 @@
 <script>
+	import { ButtonGroup, Button } from 'flowbite-svelte';
+	import {
+		UserCircleSolid,
+		AdjustmentsVerticalOutline,
+		DownloadSolid,
+		ClipboardSolid
+	} from 'flowbite-svelte-icons';
+
 	// Import markdown conversion library
 	import { marked } from 'marked';
 
@@ -1115,6 +1123,23 @@
 
     `;
 </script>
+
+<div class="flex justify-between max-w-7xl mx-auto bg-slate-300 rounded-lg p-1">
+	<Button>
+		<UserCircleSolid class="w-3 h-3 me-2" />
+		New Readme
+	</Button>
+	<ButtonGroup>
+		<Button>
+			<ClipboardSolid class="w-3 h-3 me-2" />
+			Copy
+		</Button>
+		<Button>
+			<DownloadSolid class="w-3 h-3 me-2" />
+			Download
+		</Button>
+	</ButtonGroup>
+</div>
 
 <!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
 <textarea bind:value={markdown} placeholder="Enter markdown here" />
