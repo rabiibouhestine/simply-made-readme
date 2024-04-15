@@ -1,18 +1,15 @@
 <script>
-	import { ButtonGroup, Button } from 'flowbite-svelte';
+	import { marked } from 'marked';
+	import { ButtonGroup, Button, Modal } from 'flowbite-svelte';
 	import {
 		UserCircleSolid,
-		AdjustmentsVerticalOutline,
+		ExclamationCircleOutline,
 		DownloadSolid,
 		ClipboardSolid
 	} from 'flowbite-svelte-icons';
 
-	// Import markdown conversion library
-	import { marked } from 'marked';
-
-	// Declare a variable to store the markdown data
+	let popupModal = false;
 	let markdown = '';
-
 	let style = `
     <style>
 	/*light*/
@@ -1125,7 +1122,7 @@
 </script>
 
 <div class="flex justify-between max-w-7xl mx-auto bg-gray-100 rounded-lg p-1">
-	<Button>
+	<Button on:click={() => (popupModal = true)}>
 		<UserCircleSolid class="w-3 h-3 me-2" />
 		New Readme
 	</Button>
@@ -1151,3 +1148,15 @@
 		{@html marked(markdown)}
 	</div>
 </div>
+
+<Modal bind:open={popupModal} size="xs" autoclose>
+	<div class="text-center">
+		<ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
+		<h3 class="text-lg font-normal text-gray-500 dark:text-gray-400">
+			Are you sure you want to start a new readme?
+		</h3>
+		<p class="mb-5">You will not be able to restore your current document</p>
+		<Button href="/new" color="red" class="me-2">Yes, I'm sure</Button>
+		<Button color="alternative">No, cancel</Button>
+	</div>
+</Modal>
