@@ -12,8 +12,8 @@
 			The easiest way to create a <span class="text-primary-600">README</span>
 		</Heading>
 		<P class="mb-6 text-center text-lg lg:text-xl px-16  dark:text-gray-400">
-			A simple editor that allows you to quickly add and customize all the sections you need for
-			your project's readme
+			A simple editor that allows you to easily add and customize all the sections you need for your
+			project's readme
 		</P>
 		<div class="flex flex-col gap-2 items-center">
 			<Button size="xl" href="/">Get Started</Button>
