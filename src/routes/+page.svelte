@@ -16,7 +16,7 @@
 			project's readme
 		</P>
 		<div class="flex flex-col gap-2 items-center">
-			<Button size="xl" href="/">Get Started</Button>
+			<Button size="xl" href="/editor">Get Started</Button>
 			<p class="text-sm text-slate-600">No Email Required</p>
 		</div>
 	</div>
@@ -26,7 +26,7 @@
 		class="rounded-lg max-w-6xl mx-auto"
 	/>
 	<p class="flex gap-1">
-		Made with <span class="text-pink-400">♡</span> by
+		Made with <span class="text-red-500">♡</span> by
 		<a href="https://rabiibouhestine.com" target="_blank" class="text-primary-600 hover:underline">
 			Rabii Bouhestine
 		</a>
