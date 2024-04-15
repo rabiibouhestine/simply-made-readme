@@ -16,7 +16,7 @@
 			project's readme
 		</P>
 		<div class="flex flex-col gap-2 items-center">
-			<Button size="xl" href="/type">Get Started</Button>
+			<Button size="xl" href="/type" class="px-10">Get Started</Button>
 			<p class="text-sm text-slate-600">No Email Required</p>
 		</div>
 	</div>
