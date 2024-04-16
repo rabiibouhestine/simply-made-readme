@@ -63,7 +63,7 @@
 				on:mousedown={startDrag}
 				on:touchstart={startDrag}
 				on:keydown={handleKeyDown}
-				class="handle bg-gray-50 p-4 border flex rounded-l-lg"
+				class="bg-gray-50 p-4 border flex rounded-l-lg"
 			>
 				<DotsVerticalOutline class="w-6 h-6" />
 				<DotsVerticalOutline class="w-6 h-6 -ml-4" />
