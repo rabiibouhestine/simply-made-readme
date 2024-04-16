@@ -23,7 +23,7 @@
 	let style = GithubStyle;
 </script>
 
-<div class="flex justify-between max-w-7xl mx-auto bg-gray-100 rounded-lg p-1">
+<div class="flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
 	<Button on:click={() => (popupModal = true)}>
 		<UserCircleSolid class="w-3 h-3 me-2" />
 		New Readme
