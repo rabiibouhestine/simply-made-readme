@@ -18,6 +18,7 @@
 		rows: 4,
 		placeholder: 'Enter markdown here'
 	};
+	let showTextEditor = false;
 	let popupModal = false;
 	let markdown = '';
 	let style = GithubStyle;
@@ -41,19 +42,38 @@
 </div>
 
 <div class="flex gap-6 justify-between max-w-7xl mx-auto mt-6">
-	<SectionList
-		on:sectionClick={(event) => {
-			console.log(event.detail.id);
-		}}
-	/>
+	{#if showTextEditor}
+		<!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
+		<div class="w-full flex flex-col">
+			<div class="flex">
+				<div class="border rounded-tl-lg p-4 grow">
+					<h2>Section Title</h2>
+				</div>
+				<button
+					on:click={() => {
+						showTextEditor = false;
+					}}
+					class="border border-l-0 rounded-tr-lg p-4"
+				>
+					<h2>Close</h2>
+				</button>
+			</div>
+			<Textarea {...textareaprops} bind:value={markdown} class="border-t-0 rounded-t-none" />
+		</div>
+	{:else}
+		<SectionList
+			on:sectionClick={(event) => {
+				console.log(event.detail.id);
+				showTextEditor = true;
+			}}
+		/>
+	{/if}
 	<div class="flex flex-col gap-4 w-full">
 		<!-- Convert the markdown to HTML and display it -->
 		<div class="markdown-body w-full min-h-80 rounded-lg border">
 			{@html style}
 			{@html marked(markdown)}
 		</div>
-		<!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
-		<Textarea {...textareaprops} bind:value={markdown} />
 	</div>
 </div>
 
