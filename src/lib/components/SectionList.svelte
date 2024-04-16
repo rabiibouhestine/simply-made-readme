@@ -67,7 +67,6 @@
 			>
 				<DotsVerticalOutline class="w-6 h-6" />
 				<DotsVerticalOutline class="w-6 h-6 -ml-4" />
-				<DotsVerticalOutline class="w-6 h-6 -ml-4" />
 			</div>
 			<button class="bg-gray-50 p-4 border-t border-b grow text-left hover:text-primary-600">
 				{item.name}
