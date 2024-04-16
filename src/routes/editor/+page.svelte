@@ -41,7 +41,11 @@
 </div>
 
 <div class="flex gap-6 justify-between max-w-7xl mx-auto mt-6">
-	<SectionList />
+	<SectionList
+		on:sectionClick={(event) => {
+			console.log(event.detail.id);
+		}}
+	/>
 	<div class="flex flex-col gap-4 w-full">
 		<!-- Convert the markdown to HTML and display it -->
 		<div class="markdown-body w-full min-h-80 rounded-lg border">

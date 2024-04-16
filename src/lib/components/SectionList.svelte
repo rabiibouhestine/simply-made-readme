@@ -2,7 +2,7 @@
 	import { flip } from 'svelte/animate';
 	import { dndzone, SOURCES, TRIGGERS } from 'svelte-dnd-action';
 	import { TrashBinOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
-	import { Button } from 'flowbite-svelte';
+	import { createEventDispatcher } from 'svelte';
 
 	const flipDurationMs = 200;
 	const dropTargetStyle = {};
@@ -13,6 +13,8 @@
 		{ id: 3, name: 'Paragraph' },
 		{ id: 4, name: 'Attribution (Not Required)' }
 	];
+
+	const dispatch = createEventDispatcher();
 
 	function handleConsider(e: any) {
 		const {
@@ -44,6 +46,12 @@
 	function handleKeyDown(e: any) {
 		if ((e.key === 'Enter' || e.key === ' ') && dragDisabled) dragDisabled = false;
 	}
+
+	function sectionClick(id: number) {
+		dispatch('sectionClick', {
+			id
+		});
+	}
 </script>
 
 <div
@@ -68,7 +76,12 @@
 				<DotsVerticalOutline class="w-6 h-6" />
 				<DotsVerticalOutline class="w-6 h-6 -ml-4" />
 			</div>
-			<button class="bg-gray-50 p-4 border-t border-b grow text-left hover:text-primary-600">
+			<button
+				on:click={() => {
+					sectionClick(item.id);
+				}}
+				class="bg-gray-50 p-4 border-t border-b grow text-left hover:text-primary-600"
+			>
 				{item.name}
 			</button>
 			<button
