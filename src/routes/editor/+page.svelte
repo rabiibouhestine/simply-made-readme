@@ -1,8 +1,8 @@
 <script>
 	import { marked } from 'marked';
 	import { ButtonGroup, Button, Modal, Textarea } from 'flowbite-svelte';
-
 	import GithubStyle from '$lib/githubStyle';
+	import SectionList from '$lib/components/SectionList.svelte';
 
 	import {
 		UserCircleSolid,
@@ -50,6 +50,8 @@
 		{@html marked(markdown)}
 	</div>
 </div>
+
+<SectionList />
 
 <Modal bind:open={popupModal} size="xs" autoclose>
 	<div class="text-center">
