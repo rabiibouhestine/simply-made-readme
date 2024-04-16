@@ -4,9 +4,9 @@
 	import { TrashBinOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
 
 	let items = [
-		{ id: 1, name: 'item1' },
-		{ id: 2, name: 'item2' },
-		{ id: 3, name: 'item3' },
+		{ id: 1, name: 'Title' },
+		{ id: 2, name: 'Description' },
+		{ id: 3, name: 'Paragraph' },
 		{ id: 4, name: 'Attribution (Not Required)' }
 	];
 
