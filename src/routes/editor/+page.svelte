@@ -41,17 +41,17 @@
 </div>
 
 <div class="flex gap-6 justify-between max-w-7xl mx-auto mt-6">
-	<!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
-	<Textarea {...textareaprops} bind:value={markdown} class="w-full" />
-
-	<!-- Convert the markdown to HTML and display it -->
-	<div class="markdown-body w-full rounded-lg border">
-		{@html style}
-		{@html marked(markdown)}
+	<SectionList />
+	<div class="flex flex-col gap-4 w-full">
+		<!-- Convert the markdown to HTML and display it -->
+		<div class="markdown-body w-full min-h-80 rounded-lg border">
+			{@html style}
+			{@html marked(markdown)}
+		</div>
+		<!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
+		<Textarea {...textareaprops} bind:value={markdown} />
 	</div>
 </div>
-
-<SectionList />
 
 <Modal bind:open={popupModal} size="xs" autoclose>
 	<div class="text-center">

@@ -22,7 +22,7 @@
 </script>
 
 <div
-	class="max-w-xl mx-auto my-10"
+	class="w-full"
 	use:dndzone={{ items, flipDurationMs, dropTargetStyle }}
 	on:consider={handleDndConsider}
 	on:finalize={handleDndFinalize}
