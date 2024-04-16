@@ -11,7 +11,23 @@
 		{ id: 1, name: 'Title' },
 		{ id: 2, name: 'Description' },
 		{ id: 3, name: 'Paragraph' },
-		{ id: 4, name: 'Attribution (Not Required)' }
+		{ id: 4, name: 'Attribution (Not Required)' },
+		{ id: 5, name: 'Title' },
+		{ id: 6, name: 'Description' },
+		{ id: 7, name: 'Paragraph' },
+		{ id: 8, name: 'Attribution (Not Required)' },
+		{ id: 9, name: 'Title' },
+		{ id: 10, name: 'Description' },
+		{ id: 11, name: 'Paragraph' },
+		{ id: 12, name: 'Attribution (Not Required)' },
+		{ id: 13, name: 'Title' },
+		{ id: 14, name: 'Description' },
+		{ id: 15, name: 'Paragraph' },
+		{ id: 16, name: 'Attribution (Not Required)' },
+		{ id: 17, name: 'Title' },
+		{ id: 18, name: 'Description' },
+		{ id: 19, name: 'Paragraph' },
+		{ id: 20, name: 'Attribution (Not Required)' }
 	];
 
 	const dispatch = createEventDispatcher();
@@ -55,7 +71,7 @@
 </script>
 
 <div
-	class="w-full"
+	class="w-full h-[540px] overflow-scroll pr-4"
 	use:dndzone={{ items, dragDisabled, flipDurationMs, dropTargetStyle }}
 	on:consider={handleConsider}
 	on:finalize={handleFinalize}
