@@ -17,17 +17,7 @@
 		{ id: 7, name: 'Paragraph' },
 		{ id: 8, name: 'Attribution (Not Required)' },
 		{ id: 9, name: 'Title' },
-		{ id: 10, name: 'Description' },
-		{ id: 11, name: 'Paragraph' },
-		{ id: 12, name: 'Attribution (Not Required)' },
-		{ id: 13, name: 'Title' },
-		{ id: 14, name: 'Description' },
-		{ id: 15, name: 'Paragraph' },
-		{ id: 16, name: 'Attribution (Not Required)' },
-		{ id: 17, name: 'Title' },
-		{ id: 18, name: 'Description' },
-		{ id: 19, name: 'Paragraph' },
-		{ id: 20, name: 'Attribution (Not Required)' }
+		{ id: 10, name: 'Description' }
 	];
 
 	const dispatch = createEventDispatcher();
