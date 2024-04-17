@@ -60,7 +60,11 @@
 					<h2>Close</h2>
 				</button>
 			</div>
-			<Textarea {...textareaprops} bind:value={markdown} class="border-t-0 rounded-t-none" />
+			<textarea
+				class="h-full rounded-b-lg border-t-0 border-gray-200 focus:border-gray-200 focus:ring-0 resize-none"
+				placeholder="Enter markdown here"
+				bind:value={markdown}
+			/>
 		</div>
 	{:else}
 		<SectionList
