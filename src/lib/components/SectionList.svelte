@@ -71,7 +71,7 @@
 </script>
 
 <div
-	class="w-full h-[540px] overflow-scroll pr-4"
+	class="w-full h-[550px] overflow-scroll no-scrollbar"
 	use:dndzone={{ items, dragDisabled, flipDurationMs, dropTargetStyle }}
 	on:consider={handleConsider}
 	on:finalize={handleFinalize}

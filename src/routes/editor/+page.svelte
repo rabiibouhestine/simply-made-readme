@@ -76,7 +76,7 @@
 	{/if}
 	<div class="flex flex-col gap-4 w-full">
 		<!-- Convert the markdown to HTML and display it -->
-		<div class="markdown-body w-full min-h-80 rounded-lg border p-4">
+		<div class="markdown-body w-full h-[550px] rounded-lg border p-4">
 			{@html style}
 			{@html marked(markdown)}
 		</div>
