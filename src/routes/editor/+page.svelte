@@ -20,6 +20,8 @@
 	};
 	let showTextEditor = false;
 	let popupModal = false;
+	let downloadModal = false;
+	let copyModal = false;
 	let markdown = '';
 	let style = GithubStyle;
 </script>
@@ -30,11 +32,11 @@
 		New Readme
 	</Button>
 	<ButtonGroup>
-		<Button>
+		<Button on:click={() => (copyModal = true)}>
 			<ClipboardSolid class="w-3 h-3 me-2" />
 			Copy
 		</Button>
-		<Button>
+		<Button on:click={() => (downloadModal = true)}>
 			<DownloadSolid class="w-3 h-3 me-2" />
 			Download
 		</Button>
@@ -86,5 +88,43 @@
 		<p class="mb-5">You will not be able to restore your current document</p>
 		<Button href="/new" color="red" class="me-2">Yes, I'm sure</Button>
 		<Button color="alternative">No, cancel</Button>
+	</div>
+</Modal>
+<Modal bind:open={downloadModal} size="xs" autoclose>
+	<div class="flex flex-col items-center text-center">
+		<img src="/party.svg" alt="Success" class="w-20" />
+		<h3 class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">Readme Downloaded</h3>
+		<p class="text-sm mb-5">
+			Thanks for using Simply Made Readme! Feel free to reach out to me with any feedback at
+			rabiibouhestine@gmail.com
+		</p>
+		<p class="text-sm mb-8">If you found this product helpful, consider supporting me!</p>
+		<a href="https://www.buymeacoffee.com/rabiibouhestine" target="_blank">
+			<img
+				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+				alt="Buy Me A Coffee"
+				style="height: 60px !important;width: 217px !important;"
+			/>
+		</a>
+	</div>
+</Modal>
+<Modal bind:open={copyModal} size="xs" autoclose>
+	<div class="flex flex-col items-center text-center">
+		<img src="/party.svg" alt="Success" class="w-20" />
+		<h3 class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">
+			Readme Copied to Clipboard
+		</h3>
+		<p class="text-sm mb-5">
+			Thanks for using Simply Made Readme! Feel free to reach out to me with any feedback at
+			rabiibouhestine@gmail.com
+		</p>
+		<p class="text-sm mb-8">If you found this product helpful, consider supporting me!</p>
+		<a href="https://www.buymeacoffee.com/rabiibouhestine" target="_blank">
+			<img
+				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+				alt="Buy Me A Coffee"
+				style="height: 60px !important;width: 217px !important;"
+			/>
+		</a>
 	</div>
 </Modal>
