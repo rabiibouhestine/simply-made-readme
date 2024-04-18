@@ -132,7 +132,7 @@ This project is used by the following companies:
 		/>
 	{/if}
 	<div class="flex flex-col gap-4 w-full">
-		<div class="markdown-body w-full h-[550px] rounded-lg border p-4">
+		<div class="markdown-body w-full h-[550px] rounded-lg border p-4 overflow-scroll">
 			{@html style}
 			{@html marked(concatenatedMarkdown)}
 		</div>
