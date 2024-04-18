@@ -109,6 +109,7 @@ This project is used by the following companies:
 			}}
 			on:deleteSection={(event) => {
 				sections = sections.filter((section) => section.id !== event.detail.id);
+				updateOutput();
 			}}
 		/>
 	{/if}
