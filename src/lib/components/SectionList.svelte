@@ -4,21 +4,11 @@
 	import { TrashBinOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
 	import { createEventDispatcher } from 'svelte';
 
+	export let items: any[] = [];
+
 	const flipDurationMs = 200;
 	const dropTargetStyle = {};
 	let dragDisabled = true;
-	let items = [
-		{ id: 1, name: 'Title' },
-		{ id: 2, name: 'Description' },
-		{ id: 3, name: 'Paragraph' },
-		{ id: 4, name: 'Attribution (Not Required)' },
-		{ id: 5, name: 'Title' },
-		{ id: 6, name: 'Description' },
-		{ id: 7, name: 'Paragraph' },
-		{ id: 8, name: 'Attribution (Not Required)' },
-		{ id: 9, name: 'Title' },
-		{ id: 10, name: 'Description' }
-	];
 
 	const dispatch = createEventDispatcher();
 
@@ -53,8 +43,13 @@
 		if ((e.key === 'Enter' || e.key === ' ') && dragDisabled) dragDisabled = false;
 	}
 
-	function sectionClick(id: number) {
-		dispatch('sectionClick', {
+	function editSection(id: number) {
+		dispatch('editSection', {
+			id
+		});
+	}
+	function deleteSection(id: number) {
+		dispatch('deleteSection', {
 			id
 		});
 	}
@@ -84,13 +79,16 @@
 			</div>
 			<button
 				on:click={() => {
-					sectionClick(item.id);
+					editSection(item.id);
 				}}
 				class="bg-gray-50 p-4 border-t border-b grow text-left hover:text-primary-600"
 			>
-				{item.name}
+				{item.id + ' ' + item.name}
 			</button>
 			<button
+				on:click={() => {
+					deleteSection(item.id);
+				}}
 				class="bg-gray-50 text-gray-500 hover:bg-red-500 hover:text-gray-100 p-4 border rounded-r-lg"
 			>
 				<TrashBinOutline class="w-6 h-6 " />

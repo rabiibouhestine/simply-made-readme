@@ -24,6 +24,19 @@
 	let copyModal = false;
 	let markdown = '';
 	let style = GithubStyle;
+
+	let sections = [
+		{ id: 1, name: 'Title' },
+		{ id: 2, name: 'Description' },
+		{ id: 3, name: 'Paragraph' },
+		{ id: 4, name: 'Attribution (Not Required)' },
+		{ id: 5, name: 'Title' },
+		{ id: 6, name: 'Description' },
+		{ id: 7, name: 'Paragraph' },
+		{ id: 8, name: 'Attribution (Not Required)' },
+		{ id: 9, name: 'Title' },
+		{ id: 10, name: 'Description' }
+	];
 </script>
 
 <div class="flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
@@ -68,9 +81,13 @@
 		</div>
 	{:else}
 		<SectionList
-			on:sectionClick={(event) => {
+			items={sections}
+			on:editSection={(event) => {
 				console.log(event.detail.id);
 				showTextEditor = true;
+			}}
+			on:deleteSection={(event) => {
+				sections = sections.filter((section) => section.id !== event.detail.id);
 			}}
 		/>
 	{/if}
