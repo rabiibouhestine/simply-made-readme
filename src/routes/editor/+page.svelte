@@ -58,7 +58,6 @@
 
 <div class="flex gap-6 justify-between max-w-7xl mx-auto mt-6">
 	{#if showTextEditor}
-		<!-- Declare a textarea where the user can enter markdown, and bind it to the variable `markdown` -->
 		<div class="w-full flex flex-col">
 			<div class="flex">
 				<div class="border rounded-tl-lg p-4 grow">
