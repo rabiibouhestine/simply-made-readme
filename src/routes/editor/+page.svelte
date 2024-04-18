@@ -129,6 +129,10 @@ This project is used by the following companies:
 				sections = sections.filter((section) => section.id !== event.detail.id);
 				updateOutput();
 			}}
+			on:listUpdated={(e) => {
+				sections = e.detail.items;
+				updateOutput();
+			}}
 		/>
 	{/if}
 	<div class="flex flex-col gap-4 w-full">

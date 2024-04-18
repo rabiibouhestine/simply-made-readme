@@ -33,6 +33,9 @@
 		if (source === SOURCES.POINTER) {
 			dragDisabled = true;
 		}
+		dispatch('listUpdated', {
+			items
+		});
 	}
 	function startDrag(e: any) {
 		// preventing default to prevent lag on touch devices (because of the browser checking for screen scrolling)
