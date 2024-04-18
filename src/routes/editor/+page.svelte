@@ -47,11 +47,18 @@ This project is used by the following companies:
 	];
 
 	let currentSectionID: any;
-	let currentMarkdown = '';
+	let markdownInput = '';
 	let concatenatedMarkdown = '';
 
+	sections.forEach((section) => {
+		concatenatedMarkdown += section.markdown;
+	});
+
+	function updateSections() {
+		sections.filter((section) => section.id == currentSectionID)[0].markdown = markdownInput;
+	}
+
 	function updateOutput() {
-		sections.filter((section) => section.id == currentSectionID)[0].markdown = currentMarkdown;
 		concatenatedMarkdown = '';
 		sections.forEach((section) => {
 			concatenatedMarkdown += section.markdown;
@@ -95,8 +102,11 @@ This project is used by the following companies:
 			<textarea
 				class="h-full rounded-b-lg border-t-0 border-gray-200 focus:border-gray-200 focus:ring-0 resize-none"
 				placeholder="Enter markdown here"
-				bind:value={currentMarkdown}
-				on:input={updateOutput}
+				bind:value={markdownInput}
+				on:input={() => {
+					updateSections();
+					updateOutput();
+				}}
 			/>
 		</div>
 	{:else}
@@ -104,7 +114,7 @@ This project is used by the following companies:
 			items={sections}
 			on:editSection={(event) => {
 				currentSectionID = event.detail.id;
-				currentMarkdown = sections.filter((section) => section.id == event.detail.id)[0].markdown;
+				markdownInput = sections.filter((section) => section.id == event.detail.id)[0].markdown;
 				showTextEditor = true;
 			}}
 			on:deleteSection={(event) => {
