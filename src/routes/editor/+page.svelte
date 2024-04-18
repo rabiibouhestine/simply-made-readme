@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { marked } from 'marked';
 	import { ButtonGroup, Button, Modal, Textarea } from 'flowbite-svelte';
 	import GithubStyle from '$lib/githubStyle';
@@ -26,17 +26,21 @@
 	let style = GithubStyle;
 
 	let sections = [
-		{ id: 1, name: 'Title', markdown: '' },
-		{ id: 2, name: 'Description', markdown: '' },
-		{ id: 3, name: 'Paragraph', markdown: '' },
-		{ id: 4, name: 'Attribution (Not Required)', markdown: '' },
-		{ id: 5, name: 'Title', markdown: '' },
+		{ id: 1, name: 'Title', markdown: '1111' },
+		{ id: 2, name: 'Description', markdown: '2222' },
+		{ id: 3, name: 'Paragraph', markdown: '33333' },
+		{ id: 4, name: 'Attribution (Not Required)', markdown: '44444' },
+		{ id: 5, name: 'Title', markdown: '55555' },
 		{ id: 6, name: 'Description', markdown: '' },
 		{ id: 7, name: 'Paragraph', markdown: '' },
 		{ id: 8, name: 'Attribution (Not Required)', markdown: '' },
 		{ id: 9, name: 'Title', markdown: '' },
 		{ id: 10, name: 'Description', markdown: '' }
 	];
+
+	let currentSectionID: any;
+	let currentMarkdown = '';
+	let concatenatedMarkdown = '';
 </script>
 
 <div class="flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
@@ -75,14 +79,23 @@
 			<textarea
 				class="h-full rounded-b-lg border-t-0 border-gray-200 focus:border-gray-200 focus:ring-0 resize-none"
 				placeholder="Enter markdown here"
-				bind:value={markdown}
+				bind:value={currentMarkdown}
+				on:input={() => {
+					sections.filter((section) => section.id == currentSectionID)[0].markdown =
+						currentMarkdown;
+					concatenatedMarkdown = '';
+					sections.forEach((section) => {
+						concatenatedMarkdown += section.markdown;
+					});
+				}}
 			/>
 		</div>
 	{:else}
 		<SectionList
 			items={sections}
 			on:editSection={(event) => {
-				console.log(event.detail.id);
+				currentSectionID = event.detail.id;
+				currentMarkdown = sections.filter((section) => section.id == event.detail.id)[0].markdown;
 				showTextEditor = true;
 			}}
 			on:deleteSection={(event) => {
@@ -94,7 +107,7 @@
 		<!-- Convert the markdown to HTML and display it -->
 		<div class="markdown-body w-full h-[550px] rounded-lg border p-4">
 			{@html style}
-			{@html marked(markdown)}
+			{@html marked(concatenatedMarkdown)}
 		</div>
 	</div>
 </div>
