@@ -51,7 +51,11 @@ This project is used by the following companies:
 	let concatenatedMarkdown = '';
 
 	sections.forEach((section) => {
-		concatenatedMarkdown += section.markdown;
+		concatenatedMarkdown +=
+			section.markdown +
+			`
+			
+`;
 	});
 
 	function updateSections() {
@@ -61,7 +65,11 @@ This project is used by the following companies:
 	function updateOutput() {
 		concatenatedMarkdown = '';
 		sections.forEach((section) => {
-			concatenatedMarkdown += section.markdown;
+			concatenatedMarkdown +=
+				section.markdown +
+				`
+			
+`;
 		});
 	}
 </script>
