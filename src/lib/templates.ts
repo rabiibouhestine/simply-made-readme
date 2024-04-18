@@ -1,7 +1,6 @@
 const templates = {
     'profile': [],
-    'library': [],
-    'application': [
+    'package': [
 		{
 			id: 1,
 			name: 'Title',
@@ -21,6 +20,17 @@ This project is used by the following companies:
 		{ id: 8, name: 'Attribution (Not Required)', markdown: '' },
 		{ id: 9, name: 'Title', markdown: '' },
 		{ id: 10, name: 'Description', markdown: '' }
+	],
+    'empty': [
+		{
+			id: 1,
+			name: 'Title',
+			markdown: `# Title
+
+This project is awesome!
+
+`
+		}
 	]
 }
 
