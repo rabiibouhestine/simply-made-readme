@@ -26,16 +26,16 @@
 	let style = GithubStyle;
 
 	let sections = [
-		{ id: 1, name: 'Title' },
-		{ id: 2, name: 'Description' },
-		{ id: 3, name: 'Paragraph' },
-		{ id: 4, name: 'Attribution (Not Required)' },
-		{ id: 5, name: 'Title' },
-		{ id: 6, name: 'Description' },
-		{ id: 7, name: 'Paragraph' },
-		{ id: 8, name: 'Attribution (Not Required)' },
-		{ id: 9, name: 'Title' },
-		{ id: 10, name: 'Description' }
+		{ id: 1, name: 'Title', markdown: '' },
+		{ id: 2, name: 'Description', markdown: '' },
+		{ id: 3, name: 'Paragraph', markdown: '' },
+		{ id: 4, name: 'Attribution (Not Required)', markdown: '' },
+		{ id: 5, name: 'Title', markdown: '' },
+		{ id: 6, name: 'Description', markdown: '' },
+		{ id: 7, name: 'Paragraph', markdown: '' },
+		{ id: 8, name: 'Attribution (Not Required)', markdown: '' },
+		{ id: 9, name: 'Title', markdown: '' },
+		{ id: 10, name: 'Description', markdown: '' }
 	];
 </script>
 
