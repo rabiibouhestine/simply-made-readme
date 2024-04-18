@@ -4,15 +4,18 @@
 	const types = [
 		{
 			img: 'https://resumeninja.io/lemo-template.jpg',
-			label: 'Github Profile'
+			label: 'Github Profile',
+			link: '/editor?template=profile'
 		},
 		{
 			img: 'https://resumeninja.io/classic-template.jpg',
-			label: 'Package/Library'
+			label: 'Package/Library',
+			link: '/editor?template=library'
 		},
 		{
 			img: 'https://resumeninja.io/harvard-template.jpg',
-			label: 'Web Application'
+			label: 'Web Application',
+			link: '/editor?template=application'
 		}
 	];
 </script>
@@ -33,7 +36,7 @@
 	</div>
 	<div class="flex gap-8">
 		{#each types as type}
-			<a href="/editor" class="flex flex-col gap-2 items-center group">
+			<a href={type.link} class="flex flex-col gap-2 items-center group">
 				<img
 					src={type.img}
 					alt="editor screenshot"
