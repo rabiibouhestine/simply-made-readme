@@ -22,11 +22,19 @@
 	let popupModal = false;
 	let downloadModal = false;
 	let copyModal = false;
-	let markdown = '';
 	let style = GithubStyle;
 
 	let sections = [
-		{ id: 1, name: 'Title', markdown: '1111' },
+		{
+			id: 1,
+			name: 'Title',
+			markdown: `## Used B
+
+This project is used by the following companies:
+
+- Company 1
+- Company 2`
+		},
 		{ id: 2, name: 'Description', markdown: '2222' },
 		{ id: 3, name: 'Paragraph', markdown: '33333' },
 		{ id: 4, name: 'Attribution (Not Required)', markdown: '44444' },
@@ -41,6 +49,14 @@
 	let currentSectionID: any;
 	let currentMarkdown = '';
 	let concatenatedMarkdown = '';
+
+	function updateOutput() {
+		sections.filter((section) => section.id == currentSectionID)[0].markdown = currentMarkdown;
+		concatenatedMarkdown = '';
+		sections.forEach((section) => {
+			concatenatedMarkdown += section.markdown;
+		});
+	}
 </script>
 
 <div class="flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
@@ -80,14 +96,7 @@
 				class="h-full rounded-b-lg border-t-0 border-gray-200 focus:border-gray-200 focus:ring-0 resize-none"
 				placeholder="Enter markdown here"
 				bind:value={currentMarkdown}
-				on:input={() => {
-					sections.filter((section) => section.id == currentSectionID)[0].markdown =
-						currentMarkdown;
-					concatenatedMarkdown = '';
-					sections.forEach((section) => {
-						concatenatedMarkdown += section.markdown;
-					});
-				}}
+				on:input={updateOutput}
 			/>
 		</div>
 	{:else}
