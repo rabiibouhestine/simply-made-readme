@@ -50,9 +50,6 @@
 		const selectedSection = premadeSections.filter((section: any) => section.id == id)[0];
 		sections = [...sections, selectedSection];
 		updateOutput();
-		currentSectionID = id;
-		markdownInput = sections.filter((section) => section.id == id)[0].markdown;
-		showTextEditor = true;
 		addSectionModal = false;
 	}
 
