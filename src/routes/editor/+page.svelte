@@ -51,6 +51,36 @@
 		copyModal = true;
 	}
 
+	function handleDownload() {
+		// Create a Blob containing the text with Markdown content type
+		const blob = new Blob([concatenatedMarkdown], { type: 'text/markdown' });
+
+		// Create a URL for the Blob
+		const url = URL.createObjectURL(blob);
+
+		// Create a temporary anchor element
+		const a = document.createElement('a');
+
+		// Set the anchor's attributes
+		a.href = url;
+		a.download = 'readme.md';
+
+		// Append the anchor to the document body
+		document.body.appendChild(a);
+
+		// Trigger a click event on the anchor
+		a.click();
+
+		// Remove the anchor from the document body
+		document.body.removeChild(a);
+
+		// Revoke the URL to release memory
+		URL.revokeObjectURL(url);
+
+		// Show Download Success Modal
+		downloadModal = true;
+	}
+
 	function addSection(id: any) {
 		const selectedSection = premadeSections.filter((section: any) => section.id == id)[0];
 		sections = [...sections, selectedSection];
@@ -84,7 +114,7 @@
 			<ClipboardSolid class="w-3 h-3 me-2" />
 			Copy
 		</Button>
-		<Button on:click={() => (downloadModal = true)}>
+		<Button on:click={handleDownload}>
 			<DownloadSolid class="w-3 h-3 me-2" />
 			Download
 		</Button>
