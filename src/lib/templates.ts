@@ -3,7 +3,7 @@ const templates = {
     'package': [
 		{
 			id: 1,
-			name: 'Title',
+			name: 'Title and Description',
 			markdown: `## Used B
 
 This project is used by the following companies:
@@ -24,7 +24,7 @@ This project is used by the following companies:
     'empty': [
 		{
 			id: 1,
-			name: 'Title',
+			name: 'Title and Description',
 			markdown: `# Title
 
 This project is awesome!

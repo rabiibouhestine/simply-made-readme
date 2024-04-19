@@ -13,7 +13,8 @@
 		UserCircleSolid,
 		ExclamationCircleOutline,
 		DownloadSolid,
-		ClipboardSolid
+		ClipboardSolid,
+		CirclePlusOutline
 	} from 'flowbite-svelte-icons';
 
 	let textareaprops = {
@@ -101,22 +102,28 @@
 			/>
 		</div>
 	{:else}
-		<SectionList
-			items={sections}
-			on:editSection={(event) => {
-				currentSectionID = event.detail.id;
-				markdownInput = sections.filter((section) => section.id == event.detail.id)[0].markdown;
-				showTextEditor = true;
-			}}
-			on:deleteSection={(event) => {
-				sections = sections.filter((section) => section.id !== event.detail.id);
-				updateOutput();
-			}}
-			on:listUpdated={(e) => {
-				sections = e.detail.items;
-				updateOutput();
-			}}
-		/>
+		<div class="flex flex-col gap-2 w-full h-[550px] overflow-scroll no-scrollbar">
+			<SectionList
+				items={sections}
+				on:editSection={(event) => {
+					currentSectionID = event.detail.id;
+					markdownInput = sections.filter((section) => section.id == event.detail.id)[0].markdown;
+					showTextEditor = true;
+				}}
+				on:deleteSection={(event) => {
+					sections = sections.filter((section) => section.id !== event.detail.id);
+					updateOutput();
+				}}
+				on:listUpdated={(e) => {
+					sections = e.detail.items;
+					updateOutput();
+				}}
+			/>
+			<Button on:click={() => (popupModal = true)} class="py-4">
+				<CirclePlusOutline class="w-4 h-4 mr-2" />
+				Add Section
+			</Button>
+		</div>
 	{/if}
 	<div class="flex flex-col gap-4 w-full">
 		<div class="markdown-body w-full h-[550px] rounded-lg border p-4 overflow-scroll">

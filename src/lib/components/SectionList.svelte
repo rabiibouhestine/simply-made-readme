@@ -59,13 +59,13 @@
 </script>
 
 <div
-	class="w-full h-[550px] overflow-scroll no-scrollbar"
+	class="w-full flex flex-col gap-2"
 	use:dndzone={{ items, dragDisabled, flipDurationMs, dropTargetStyle }}
 	on:consider={handleConsider}
 	on:finalize={handleFinalize}
 >
 	{#each items as item (item.id)}
-		<div class="flex mb-2" animate:flip={{ duration: flipDurationMs }}>
+		<div class="flex" animate:flip={{ duration: flipDurationMs }}>
 			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div
