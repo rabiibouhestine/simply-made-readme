@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { marked } from 'marked';
-	import { ButtonGroup, Button, Modal, Textarea } from 'flowbite-svelte';
+	import { ButtonGroup, Button, Card, Modal, Textarea } from 'flowbite-svelte';
 	import GithubStyle from '$lib/githubStyle';
 	import templates from '$lib/templates';
+	import premadeSections from '$lib/sections';
 	import SectionList from '$lib/components/SectionList.svelte';
 	import { page } from '$app/stores';
 
@@ -14,7 +15,9 @@
 		ExclamationCircleOutline,
 		DownloadSolid,
 		ClipboardSolid,
-		CirclePlusOutline
+		CirclePlusOutline,
+		GiftBoxSolid,
+		ArrowUpRightFromSquareOutline
 	} from 'flowbite-svelte-icons';
 
 	let textareaprops = {
@@ -28,6 +31,7 @@
 	let popupModal = false;
 	let downloadModal = false;
 	let copyModal = false;
+	let addSectionModal = false;
 	let style = GithubStyle;
 
 	let currentSectionID: any;
@@ -119,7 +123,7 @@
 					updateOutput();
 				}}
 			/>
-			<Button on:click={() => (popupModal = true)} class="py-4">
+			<Button on:click={() => (addSectionModal = true)} class="py-4">
 				<CirclePlusOutline class="w-4 h-4 mr-2" />
 				Add Section
 			</Button>
@@ -133,6 +137,23 @@
 	</div>
 </div>
 
+<Modal bind:open={addSectionModal} size="xl" autoclose>
+	<h2 class="text-4xl text-gray-900">Add Section</h2>
+	<div class="grid grid-cols-4 gap-4">
+		{#each premadeSections as section}
+			<button class="text-left">
+				<Card>
+					<h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
+						{section.name}
+					</h5>
+					<p class="font-normal text-gray-500 dark:text-gray-400">
+						{section.description}
+					</p>
+				</Card>
+			</button>
+		{/each}
+	</div>
+</Modal>
 <Modal bind:open={popupModal} size="xs" autoclose>
 	<div class="text-center">
 		<ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
