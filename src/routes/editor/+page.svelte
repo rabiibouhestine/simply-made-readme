@@ -46,6 +46,11 @@
 `;
 	});
 
+	function handleCopy() {
+		navigator.clipboard.writeText(concatenatedMarkdown);
+		copyModal = true;
+	}
+
 	function addSection(id: any) {
 		const selectedSection = premadeSections.filter((section: any) => section.id == id)[0];
 		sections = [...sections, selectedSection];
@@ -75,7 +80,7 @@
 		New Readme
 	</Button>
 	<ButtonGroup>
-		<Button on:click={() => (copyModal = true)}>
+		<Button on:click={handleCopy}>
 			<ClipboardSolid class="w-3 h-3 me-2" />
 			Copy
 		</Button>
