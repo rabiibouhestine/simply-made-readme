@@ -190,7 +190,7 @@
 			<img
 				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
 				alt="Buy Me A Coffee"
-				style="height: 60px !important;width: 217px !important;"
+				class="w-44"
 			/>
 		</a>
 	</div>
@@ -210,7 +210,7 @@
 			<img
 				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
 				alt="Buy Me A Coffee"
-				style="height: 60px !important;width: 217px !important;"
+				class="w-44"
 			/>
 		</a>
 	</div>
