@@ -46,6 +46,10 @@
 `;
 	});
 
+	function addSection() {
+		addSectionModal = false;
+	}
+
 	function updateSections() {
 		sections.filter((section: any) => section.id == currentSectionID)[0].markdown = markdownInput;
 	}
@@ -141,7 +145,10 @@
 	<h2 class="text-4xl text-gray-900 dark:text-white">Add Section</h2>
 	<div class="grid grid-cols-4 gap-4">
 		{#each premadeSections as section}
-			<button class="text-left hover:scale-105 transition duration-150 ease-in-out">
+			<button
+				on:click={addSection}
+				class="text-left hover:scale-105 transition duration-150 ease-in-out"
+			>
 				<Card>
 					<h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
 						{section.name}
