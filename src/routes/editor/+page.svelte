@@ -186,7 +186,11 @@
 			rabiibouhestine@gmail.com
 		</p>
 		<p class="text-sm mb-8">If you found this product helpful, consider supporting me!</p>
-		<a href="https://www.buymeacoffee.com/rabiibouhestine" target="_blank">
+		<a
+			href="https://www.buymeacoffee.com/rabiibouhestine"
+			target="_blank"
+			class="hover:scale-105 transition duration-150 ease-in-out"
+		>
 			<img
 				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
 				alt="Buy Me A Coffee"
@@ -206,7 +210,11 @@
 			rabiibouhestine@gmail.com
 		</p>
 		<p class="text-sm mb-8">If you found this product helpful, consider supporting me!</p>
-		<a href="https://www.buymeacoffee.com/rabiibouhestine" target="_blank">
+		<a
+			href="https://www.buymeacoffee.com/rabiibouhestine"
+			target="_blank"
+			class="hover:scale-105 transition duration-150 ease-in-out"
+		>
 			<img
 				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
 				alt="Buy Me A Coffee"
