@@ -16,8 +16,8 @@
 			project's readme
 		</P>
 		<div class="flex flex-col gap-2 items-center">
-			<Button size="xl" href="/new" class="px-10">Get Started</Button>
-			<p class="text-sm text-slate-600">No Signup Required</p>
+			<Button size="xl" href="/new" class="px-10">Make a Readme</Button>
+			<p class="text-sm text-slate-600">No sign up required</p>
 		</div>
 	</div>
 	<img src="/editor.png" alt="editor screenshot" class="border rounded-lg max-w-6xl mx-auto" />
