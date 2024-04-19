@@ -46,7 +46,13 @@
 `;
 	});
 
-	function addSection() {
+	function addSection(id: any) {
+		const selectedSection = premadeSections.filter((section: any) => section.id == id)[0];
+		sections = [...sections, selectedSection];
+		updateOutput();
+		currentSectionID = id;
+		markdownInput = sections.filter((section) => section.id == id)[0].markdown;
+		showTextEditor = true;
 		addSectionModal = false;
 	}
 
@@ -146,7 +152,9 @@
 	<div class="grid grid-cols-4 gap-4">
 		{#each premadeSections as section}
 			<button
-				on:click={addSection}
+				on:click={() => {
+					addSection(section.id);
+				}}
 				class="text-left hover:scale-105 transition duration-150 ease-in-out"
 			>
 				<Card>
