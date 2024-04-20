@@ -19,7 +19,8 @@
 	} from 'flowbite-svelte-icons';
 
 	let showTextEditor = false;
-	let popupModal = false;
+	let newReadmeModal = false;
+	let deleteSectionModal = false;
 	let downloadModal = false;
 	let copyModal = false;
 	let addSectionModal = false;
@@ -80,6 +81,11 @@
 		addSectionModal = false;
 	}
 
+	function deleteSection(id: any) {
+		sections = sections.filter((section) => section.id !== id);
+		updateOutput();
+	}
+
 	function updateSections() {
 		sections.filter((section: any) => section.id == currentSectionID)[0].markdown = markdownInput;
 	}
@@ -101,7 +107,7 @@
 </script>
 
 <div class="flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
-	<Button on:click={() => (popupModal = true)}>
+	<Button on:click={() => (newReadmeModal = true)}>
 		<UserCircleSolid class="w-3 h-3 me-2" />
 		New Readme
 	</Button>
@@ -156,8 +162,8 @@
 					showTextEditor = true;
 				}}
 				on:deleteSection={(event) => {
-					sections = sections.filter((section) => section.id !== event.detail.id);
-					updateOutput();
+					currentSectionID = event.detail.id;
+					deleteSectionModal = true;
 				}}
 				on:listUpdated={(e) => {
 					sections = e.detail.items;
@@ -200,7 +206,7 @@
 		{/each}
 	</div>
 </Modal>
-<Modal bind:open={popupModal} size="xs" autoclose>
+<Modal bind:open={newReadmeModal} size="xs" autoclose>
 	<div class="text-center">
 		<ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
 		<h3 class="mb-6 text-lg font-normal text-gray-500 dark:text-gray-400">
@@ -209,6 +215,25 @@
 			You will lose all current progress!
 		</h3>
 		<Button href="/new" color="red" class="me-2">Yes, I'm sure</Button>
+		<Button color="alternative">No, cancel</Button>
+	</div>
+</Modal>
+<Modal bind:open={deleteSectionModal} size="xs" autoclose>
+	<div class="text-center">
+		<ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
+		<h3 class="mb-6 text-lg font-normal text-gray-500 dark:text-gray-400">
+			Are you sure you want to delete the section:
+			<br />
+			{sections.filter((section) => section.id == currentSectionID)[0].name}
+		</h3>
+		<Button
+			on:click={() => {
+				deleteSection(currentSectionID);
+				deleteSectionModal = false;
+			}}
+			color="red"
+			class="me-2">Yes, I'm sure</Button
+		>
 		<Button color="alternative">No, cancel</Button>
 	</div>
 </Modal>
