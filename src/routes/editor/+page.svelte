@@ -81,9 +81,16 @@
 	}
 
 	function addSection(id: any) {
+		// Get selected section from premadeSections
 		const selectedSection = premadeSections.filter((section: any) => section.id == id)[0];
+
+		// Append selected section to the sections
 		sections = [...sections, selectedSection];
+
+		// Update concatenated markdown
 		reconcatenateMarkdown();
+
+		// Close modal
 		showAddSectionModal = false;
 	}
 
