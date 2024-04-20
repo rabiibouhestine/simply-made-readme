@@ -36,6 +36,7 @@
 
 	let currentSectionID: any;
 	let markdownInput = '';
+	let titleInput = '';
 	let concatenatedMarkdown = '';
 
 	sections.forEach((section: any) => {
@@ -92,6 +93,10 @@
 		sections.filter((section: any) => section.id == currentSectionID)[0].markdown = markdownInput;
 	}
 
+	function updateSectionTitle() {
+		sections.filter((section: any) => section.id == currentSectionID)[0].name = titleInput;
+	}
+
 	function updateOutput() {
 		concatenatedMarkdown = '';
 		sections.forEach((section: any) => {
@@ -125,9 +130,11 @@
 	{#if showTextEditor}
 		<div class="w-full flex flex-col">
 			<div class="flex">
-				<div class="border rounded-tl-lg p-4 grow">
-					<h2>Section Title</h2>
-				</div>
+				<textarea
+					class="border rounded-tl-lg grow border-gray-200 focus:border-gray-200 focus:ring-0 resize-none"
+					bind:value={titleInput}
+					on:input={updateSectionTitle}
+				/>
 				<button
 					on:click={() => {
 						showTextEditor = false;
@@ -153,6 +160,7 @@
 				items={sections}
 				on:editSection={(event) => {
 					currentSectionID = event.detail.id;
+					titleInput = sections.filter((section) => section.id == event.detail.id)[0].name;
 					markdownInput = sections.filter((section) => section.id == event.detail.id)[0].markdown;
 					showTextEditor = true;
 				}}

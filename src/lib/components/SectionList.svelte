@@ -86,7 +86,7 @@
 				}}
 				class="bg-gray-50 p-4 border-t border-b grow text-left hover:text-primary-600"
 			>
-				{item.id + ' ' + item.name}
+				{item.name}
 			</button>
 			<button
 				on:click={() => {
