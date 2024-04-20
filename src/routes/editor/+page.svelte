@@ -43,7 +43,10 @@
 	});
 
 	function handleCopy() {
+		// Copy concatenated markdown to clipboard
 		navigator.clipboard.writeText(concatenatedMarkdown);
+
+		// Show copy success modal
 		copyModal = true;
 	}
 
@@ -80,13 +83,13 @@
 	function addSection(id: any) {
 		const selectedSection = premadeSections.filter((section: any) => section.id == id)[0];
 		sections = [...sections, selectedSection];
-		updateOutput();
+		reconcatenateMarkdown();
 		addSectionModal = false;
 	}
 
 	function deleteSection(id: any) {
 		sections = sections.filter((section) => section.id !== id);
-		updateOutput();
+		reconcatenateMarkdown();
 	}
 
 	function updateSections() {
@@ -97,7 +100,7 @@
 		sections.filter((section: any) => section.id == currentSectionID)[0].name = titleInput;
 	}
 
-	function updateOutput() {
+	function reconcatenateMarkdown() {
 		concatenatedMarkdown = '';
 		sections.forEach((section: any) => {
 			concatenatedMarkdown +=
@@ -150,7 +153,7 @@
 				bind:value={markdownInput}
 				on:input={() => {
 					updateSections();
-					updateOutput();
+					reconcatenateMarkdown();
 				}}
 			/>
 		</div>
@@ -170,7 +173,7 @@
 				}}
 				on:listUpdated={(e) => {
 					sections = e.detail.items;
-					updateOutput();
+					reconcatenateMarkdown();
 				}}
 			/>
 			<Button on:click={() => (addSectionModal = true)} class="py-4">
