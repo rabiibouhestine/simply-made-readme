@@ -1,5 +1,6 @@
 const templates = {
     'profile': [],
+    'api': [],
     'package': [
 		{
 			id: 1,

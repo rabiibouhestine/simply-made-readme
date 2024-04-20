@@ -16,6 +16,11 @@
 			img: 'https://resumeninja.io/harvard-template.jpg',
 			label: 'Empty',
 			link: '/editor?template=empty'
+		},
+		{
+			img: 'https://resumeninja.io/harvard-template.jpg',
+			label: 'API',
+			link: '/editor?template=api'
 		}
 	];
 </script>
@@ -34,7 +39,7 @@
 			selection of professional resume templates.
 		</P>
 	</div>
-	<div class="flex gap-8">
+	<div class="grid grid-cols-3 gap-8">
 		{#each types as type}
 			<a href={type.link} class="flex flex-col gap-2 items-center group">
 				<img
