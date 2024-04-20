@@ -207,7 +207,8 @@
 						{section.name}
 					</h5>
 					<p class="font-normal text-gray-500 dark:text-gray-400">
-						{section.description}
+						Lurum Ipsum Bla bla bla bla
+						<!-- {section.description} -->
 					</p>
 				</Card>
 			</button>
