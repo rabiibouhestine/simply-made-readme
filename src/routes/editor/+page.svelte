@@ -82,7 +82,7 @@
 
 	function addSection(id: any) {
 		// Get selected section from premadeSections
-		const selectedSection = premadeSections.filter((section: any) => section.id == id)[0];
+		const selectedSection = premadeSections.find((section) => section.id === id);
 
 		// Append selected section to the sections
 		sections = [...sections, selectedSection];
@@ -103,11 +103,17 @@
 	}
 
 	function updateSectionMarkdown() {
-		sections.filter((section: any) => section.id == currentSectionID)[0].markdown = markdownInput;
+		const sectionIndex = sections.findIndex((section) => section.id === currentSectionID);
+		if (sectionIndex !== -1) {
+			sections[sectionIndex].markdown = markdownInput;
+		}
 	}
 
 	function updateSectionName() {
-		sections.filter((section: any) => section.id == currentSectionID)[0].name = sectionNameInput;
+		const sectionIndex = sections.findIndex((section) => section.id === currentSectionID);
+		if (sectionIndex !== -1) {
+			sections[sectionIndex].name = sectionNameInput;
+		}
 	}
 
 	function reconcatenateMarkdown() {
@@ -173,8 +179,8 @@
 				items={sections}
 				on:editSection={(event) => {
 					currentSectionID = event.detail.id;
-					sectionNameInput = sections.filter((section) => section.id == event.detail.id)[0].name;
-					markdownInput = sections.filter((section) => section.id == event.detail.id)[0].markdown;
+					sectionNameInput = sections.find((section) => section.id === event.detail.id).name;
+					markdownInput = sections.find((section) => section.id === event.detail.id).markdown;
 					showTextEditor = true;
 				}}
 				on:deleteSection={(event) => {
@@ -240,7 +246,7 @@
 		<h3 class="mb-6 text-lg font-normal text-gray-500 dark:text-gray-400">
 			Are you sure you want to delete the section:
 			<br />
-			{sections.filter((section) => section.id == currentSectionID)[0].name}
+			{sections.find((section) => section.id === currentSectionID).name}
 		</h3>
 		<Button
 			on:click={() => {
