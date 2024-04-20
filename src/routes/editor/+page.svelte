@@ -27,11 +27,11 @@
 	let markdownInput = '';
 	let titleInput = '';
 
-	let newReadmeModal = false;
-	let deleteSectionModal = false;
-	let downloadModal = false;
-	let copyModal = false;
-	let addSectionModal = false;
+	let showNewReadmeModal = false;
+	let showAddSectionModal = false;
+	let showDeleteSectionModal = false;
+	let showDownloadModal = false;
+	let showCopyModal = false;
 
 	let concatenatedMarkdown = '';
 	sections.forEach((section: any) => {
@@ -47,7 +47,7 @@
 		navigator.clipboard.writeText(concatenatedMarkdown);
 
 		// Show copy success modal
-		copyModal = true;
+		showCopyModal = true;
 	}
 
 	function handleDownload() {
@@ -77,14 +77,14 @@
 		URL.revokeObjectURL(url);
 
 		// Show Download Success Modal
-		downloadModal = true;
+		showDownloadModal = true;
 	}
 
 	function addSection(id: any) {
 		const selectedSection = premadeSections.filter((section: any) => section.id == id)[0];
 		sections = [...sections, selectedSection];
 		reconcatenateMarkdown();
-		addSectionModal = false;
+		showAddSectionModal = false;
 	}
 
 	function deleteSection(id: any) {
@@ -113,7 +113,7 @@
 </script>
 
 <div class="flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
-	<Button on:click={() => (newReadmeModal = true)}>
+	<Button on:click={() => (showNewReadmeModal = true)}>
 		<UserCircleSolid class="w-3 h-3 me-2" />
 		New Readme
 	</Button>
@@ -169,14 +169,14 @@
 				}}
 				on:deleteSection={(event) => {
 					currentSectionID = event.detail.id;
-					deleteSectionModal = true;
+					showDeleteSectionModal = true;
 				}}
 				on:listUpdated={(e) => {
 					sections = e.detail.items;
 					reconcatenateMarkdown();
 				}}
 			/>
-			<Button on:click={() => (addSectionModal = true)} class="py-4">
+			<Button on:click={() => (showAddSectionModal = true)} class="py-4">
 				<CirclePlusOutline class="w-4 h-4 mr-2" />
 				Add Section
 			</Button>
@@ -190,7 +190,7 @@
 	</div>
 </div>
 
-<Modal bind:open={addSectionModal} size="xl" autoclose>
+<Modal bind:open={showAddSectionModal} size="xl" autoclose>
 	<h2 class="text-4xl text-gray-900 dark:text-white">Add Section</h2>
 	<div class="grid grid-cols-4 gap-4">
 		{#each premadeSections as section}
@@ -212,7 +212,7 @@
 		{/each}
 	</div>
 </Modal>
-<Modal bind:open={newReadmeModal} size="xs" autoclose>
+<Modal bind:open={showNewReadmeModal} size="xs" autoclose>
 	<div class="text-center">
 		<ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
 		<h3 class="mb-6 text-lg font-normal text-gray-500 dark:text-gray-400">
@@ -224,7 +224,7 @@
 		<Button color="alternative">No, cancel</Button>
 	</div>
 </Modal>
-<Modal bind:open={deleteSectionModal} size="xs" autoclose>
+<Modal bind:open={showDeleteSectionModal} size="xs" autoclose>
 	<div class="text-center">
 		<ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
 		<h3 class="mb-6 text-lg font-normal text-gray-500 dark:text-gray-400">
@@ -235,7 +235,7 @@
 		<Button
 			on:click={() => {
 				deleteSection(currentSectionID);
-				deleteSectionModal = false;
+				showDeleteSectionModal = false;
 			}}
 			color="red"
 			class="me-2">Yes, I'm sure</Button
@@ -243,9 +243,9 @@
 		<Button color="alternative">No, cancel</Button>
 	</div>
 </Modal>
-<Modal bind:open={downloadModal} size="xs" autoclose>
+<Modal bind:open={showDownloadModal} size="xs" autoclose>
 	<ExportModal message="Readme Downloaded" />
 </Modal>
-<Modal bind:open={copyModal} size="xs" autoclose>
+<Modal bind:open={showCopyModal} size="xs" autoclose>
 	<ExportModal message="Readme Copied to Clipboard" />
 </Modal>
