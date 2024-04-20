@@ -25,7 +25,7 @@
 	let currentSectionID: any;
 
 	let markdownInput = '';
-	let titleInput = '';
+	let sectionNameInput = '';
 
 	let showNewReadmeModal = false;
 	let showAddSectionModal = false;
@@ -95,16 +95,19 @@
 	}
 
 	function deleteSection(id: any) {
+		// Remove selected section from the sections
 		sections = sections.filter((section) => section.id !== id);
+
+		// Update concatenated markdown
 		reconcatenateMarkdown();
 	}
 
-	function updateSections() {
+	function updateSectionMarkdown() {
 		sections.filter((section: any) => section.id == currentSectionID)[0].markdown = markdownInput;
 	}
 
-	function updateSectionTitle() {
-		sections.filter((section: any) => section.id == currentSectionID)[0].name = titleInput;
+	function updateSectionName() {
+		sections.filter((section: any) => section.id == currentSectionID)[0].name = sectionNameInput;
 	}
 
 	function reconcatenateMarkdown() {
@@ -142,8 +145,8 @@
 			<div class="flex">
 				<textarea
 					class="border rounded-tl-lg grow border-gray-200 focus:border-gray-200 focus:ring-0 resize-none"
-					bind:value={titleInput}
-					on:input={updateSectionTitle}
+					bind:value={sectionNameInput}
+					on:input={updateSectionName}
 				/>
 				<button
 					on:click={() => {
@@ -159,7 +162,7 @@
 				placeholder="Enter markdown here"
 				bind:value={markdownInput}
 				on:input={() => {
-					updateSections();
+					updateSectionMarkdown();
 					reconcatenateMarkdown();
 				}}
 			/>
@@ -170,7 +173,7 @@
 				items={sections}
 				on:editSection={(event) => {
 					currentSectionID = event.detail.id;
-					titleInput = sections.filter((section) => section.id == event.detail.id)[0].name;
+					sectionNameInput = sections.filter((section) => section.id == event.detail.id)[0].name;
 					markdownInput = sections.filter((section) => section.id == event.detail.id)[0].markdown;
 					showTextEditor = true;
 				}}
