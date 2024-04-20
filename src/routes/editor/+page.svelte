@@ -203,10 +203,11 @@
 <Modal bind:open={popupModal} size="xs" autoclose>
 	<div class="text-center">
 		<ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
-		<h3 class="text-lg font-normal text-gray-500 dark:text-gray-400">
+		<h3 class="mb-6 text-lg font-normal text-gray-500 dark:text-gray-400">
 			Are you sure you want to start a new readme?
+			<br />
+			You will lose all current progress!
 		</h3>
-		<p class="mb-5">You will not be able to restore your current document</p>
 		<Button href="/new" color="red" class="me-2">Yes, I'm sure</Button>
 		<Button color="alternative">No, cancel</Button>
 	</div>
