@@ -23,7 +23,6 @@
 	let showTextEditor = false;
 
 	let currentSectionID: any;
-	let concatenatedMarkdown = '';
 
 	let markdownInput = '';
 	let titleInput = '';
@@ -34,6 +33,7 @@
 	let copyModal = false;
 	let addSectionModal = false;
 
+	let concatenatedMarkdown = '';
 	sections.forEach((section: any) => {
 		concatenatedMarkdown +=
 			section.markdown +
