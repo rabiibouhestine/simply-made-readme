@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { marked } from 'marked';
 	import { ButtonGroup, Button, Card, Modal } from 'flowbite-svelte';
-	import GithubStyle from '$lib/githubStyle';
+	import { page } from '$app/stores';
+	import SectionList from '$lib/components/SectionList.svelte';
+	import ExportModal from '$lib/components/ExportModal.svelte';
 	import templates from '$lib/templates';
 	import premadeSections from '$lib/sections';
-	import SectionList from '$lib/components/SectionList.svelte';
-	import { page } from '$app/stores';
-	import ExportModal from '$lib/components/ExportModal.svelte';
+	import GithubStyle from '$lib/githubStyle';
 
 	let template = $page.url.searchParams.get('template') || '';
 	let sections: any[] = (templates as any)[template];
