@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { marked } from 'marked';
-	import { ButtonGroup, Button, Card, Modal, Textarea } from 'flowbite-svelte';
+	import { ButtonGroup, Button, Card, Modal } from 'flowbite-svelte';
 	import GithubStyle from '$lib/githubStyle';
 	import templates from '$lib/templates';
 	import premadeSections from '$lib/sections';
@@ -15,18 +15,9 @@
 		ExclamationCircleOutline,
 		DownloadSolid,
 		ClipboardSolid,
-		CirclePlusOutline,
-		GiftBoxSolid,
-		ArrowUpRightFromSquareOutline
+		CirclePlusOutline
 	} from 'flowbite-svelte-icons';
 
-	let textareaprops = {
-		id: 'message',
-		name: 'message',
-		label: 'Your message',
-		rows: 4,
-		placeholder: 'Enter markdown here'
-	};
 	let showTextEditor = false;
 	let popupModal = false;
 	let downloadModal = false;
