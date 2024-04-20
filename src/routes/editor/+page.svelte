@@ -6,6 +6,7 @@
 	import premadeSections from '$lib/sections';
 	import SectionList from '$lib/components/SectionList.svelte';
 	import { page } from '$app/stores';
+	import ExportModal from '$lib/components/ExportModal.svelte';
 
 	let template = $page.url.searchParams.get('template') || '';
 	let sections: any[] = (templates as any)[template];
@@ -238,48 +239,8 @@
 	</div>
 </Modal>
 <Modal bind:open={downloadModal} size="xs" autoclose>
-	<div class="flex flex-col items-center text-center">
-		<img src="/party.svg" alt="Success" class="w-20" />
-		<h3 class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">Readme Downloaded</h3>
-		<p class="text-sm mb-5">
-			Thanks for using Simply Made Readme! Feel free to reach out to me with any feedback at
-			rabiibouhestine@gmail.com
-		</p>
-		<p class="text-sm mb-8">If you found this product helpful, consider supporting me!</p>
-		<a
-			href="https://www.buymeacoffee.com/rabiibouhestine"
-			target="_blank"
-			class="hover:scale-105 transition duration-150 ease-in-out"
-		>
-			<img
-				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-				alt="Buy Me A Coffee"
-				class="w-44"
-			/>
-		</a>
-	</div>
+	<ExportModal message="Readme Downloaded" />
 </Modal>
 <Modal bind:open={copyModal} size="xs" autoclose>
-	<div class="flex flex-col items-center text-center">
-		<img src="/party.svg" alt="Success" class="w-20" />
-		<h3 class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">
-			Readme Copied to Clipboard
-		</h3>
-		<p class="text-sm mb-5">
-			Thanks for using Simply Made Readme! Feel free to reach out to me with any feedback at
-			rabiibouhestine@gmail.com
-		</p>
-		<p class="text-sm mb-8">If you found this product helpful, consider supporting me!</p>
-		<a
-			href="https://www.buymeacoffee.com/rabiibouhestine"
-			target="_blank"
-			class="hover:scale-105 transition duration-150 ease-in-out"
-		>
-			<img
-				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-				alt="Buy Me A Coffee"
-				class="w-44"
-			/>
-		</a>
-	</div>
+	<ExportModal message="Readme Copied to Clipboard" />
 </Modal>

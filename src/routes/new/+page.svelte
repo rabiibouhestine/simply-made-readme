@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading, P, Button } from 'flowbite-svelte';
+	import { Heading, P } from 'flowbite-svelte';
 
 	const types = [
 		{
