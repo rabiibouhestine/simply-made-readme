@@ -19,18 +19,20 @@
 		CirclePlusOutline
 	} from 'flowbite-svelte-icons';
 
+	let style = GithubStyle;
 	let showTextEditor = false;
+
+	let currentSectionID: any;
+	let concatenatedMarkdown = '';
+
+	let markdownInput = '';
+	let titleInput = '';
+
 	let newReadmeModal = false;
 	let deleteSectionModal = false;
 	let downloadModal = false;
 	let copyModal = false;
 	let addSectionModal = false;
-	let style = GithubStyle;
-
-	let currentSectionID: any;
-	let markdownInput = '';
-	let titleInput = '';
-	let concatenatedMarkdown = '';
 
 	sections.forEach((section: any) => {
 		concatenatedMarkdown +=
