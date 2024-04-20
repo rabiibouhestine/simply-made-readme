@@ -33,14 +33,7 @@
 	let showDownloadModal = false;
 	let showCopyModal = false;
 
-	let concatenatedMarkdown = '';
-	sections.forEach((section: any) => {
-		concatenatedMarkdown +=
-			section.markdown +
-			`
-			
-`;
-	});
+	let concatenatedMarkdown = sections.map((section) => section.markdown).join('\n\n');
 
 	function handleCopy() {
 		// Copy concatenated markdown to clipboard
@@ -117,14 +110,7 @@
 	}
 
 	function reconcatenateMarkdown() {
-		concatenatedMarkdown = '';
-		sections.forEach((section: any) => {
-			concatenatedMarkdown +=
-				section.markdown +
-				`
-			
-`;
-		});
+		concatenatedMarkdown = sections.map((section) => section.markdown).join('\n\n');
 	}
 </script>
 
