@@ -1,17 +1,25 @@
 const sections = [
     {
+        id: 'custom-section',
+        name: 'Custom Section',
+        description: `Use this empty section if none of the other sections seem helpful.`,
+        markdown: ``,
+      },
+    {
       id: 'title-and-description',
       name: 'Title and Description',
+      description: `A brief description of what this project does and who it's for.`,
       markdown: `
   # Project Title
   
-  A brief description of what this project does and who it's for
+  A brief description of what this project does and who it's for.
   
   `,
     },
     {
       id: 'installation',
       name: 'Installation',
+      description: `Listing specific steps helps remove ambiguity and confusion.`,
       markdown: `
   ## Installation
   
@@ -26,6 +34,7 @@ const sections = [
     {
       id: 'logo',
       name: 'Logo',
+      description: `It can be a good idea to include a logo for your project.`,
       markdown: `
   ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
   
@@ -34,6 +43,7 @@ const sections = [
     {
       id: 'run-locally',
       name: 'Run Locally',
+      description: `Listing specific steps helps remove ambiguity and confusion.`,
       markdown: `
   ## Run Locally
   
@@ -66,6 +76,7 @@ const sections = [
     {
       id: 'screenshots',
       name: 'Screenshots',
+      description: `It can be a good idea to include screenshots of your project.`,
       markdown: `
   ## Screenshots
   
@@ -76,6 +87,7 @@ const sections = [
     {
       id: 'env-variables',
       name: 'Environment Variables',
+      description: `List environment variables that are required to run the project.`,
       markdown: `
   ## Environment Variables
   
@@ -90,6 +102,7 @@ const sections = [
     {
       id: 'features',
       name: 'Features',
+      description: `List the features of your project to highlight what sets apart.`,
       markdown: `
   ## Features
   
@@ -103,6 +116,7 @@ const sections = [
     {
       id: 'usage-examples',
       name: 'Usage/Examples',
+      description: `Use examples liberally, and show the expected output if you can.`,
       markdown: `
   ## Usage/Examples
   
@@ -119,6 +133,7 @@ const sections = [
     {
       id: 'api',
       name: 'API Reference',
+      description: `Include a table of API parameters with their type and description.`,
       markdown: `
   ## API Reference
   
@@ -151,6 +166,7 @@ const sections = [
     {
       id: 'contributing',
       name: 'Contributing',
+      description: `State what your requirements are for accepting contributions.`,
       markdown: `
   ## Contributing
   
@@ -165,6 +181,7 @@ const sections = [
     {
       id: 'tests',
       name: 'Running Tests',
+      description: `Listing specific steps helps remove ambiguity and confusion.`,
       markdown: `
   ## Running Tests
   
@@ -179,6 +196,7 @@ const sections = [
     {
       id: 'license',
       name: 'License',
+      description: `For some projects, it is important to say how they are licensed.`,
       markdown: `
   ## License
   
@@ -189,6 +207,7 @@ const sections = [
     {
       id: 'badges',
       name: 'Badges',
+      description: `Add badges from somewhere like shields to convey metadata.`,
       markdown: `
   ## Badges
   
@@ -203,6 +222,7 @@ const sections = [
     {
       id: 'roadmap',
       name: 'Roadmap',
+      description: `It is a good idea to list ideas for future relases in the readme.`,
       markdown: `
   ## Roadmap
   
@@ -215,6 +235,7 @@ const sections = [
     {
       id: 'authors',
       name: 'Authors',
+      description: `Show your appreciation to those who have contributed.`,
       markdown: `
   ## Authors
   
@@ -225,6 +246,7 @@ const sections = [
     {
       id: 'acknowledgement',
       name: 'Acknowledgements',
+      description: `Show your appreciation to the ustilised projects or tools.`,
       markdown: `
   ## Acknowledgements
   
@@ -237,6 +259,7 @@ const sections = [
     {
       id: 'support',
       name: 'Support',
+      description: `Tell people how they can get help. Ex: a link, an email address, etc.`,
       markdown: `
   ## Support
   
@@ -247,6 +270,7 @@ const sections = [
     {
       id: 'feedback',
       name: 'Feedback',
+      description: `Tell people how they can provide feedbacks. Ex: an email address.`,
       markdown: `
   ## Feedback
   
@@ -257,6 +281,7 @@ const sections = [
     {
       id: 'related',
       name: 'Related',
+      description: `Tell people about alternatives or other similar or related projects.`,
       markdown: `
   ## Related
   
@@ -269,6 +294,7 @@ const sections = [
     {
       id: 'demo',
       name: 'Demo',
+      description: `Include a video that showcases a demo of your project.`,
       markdown: `
   ## Demo
   
@@ -279,6 +305,7 @@ const sections = [
     {
       id: 'tech',
       name: 'Tech',
+      description: `What Tech Stack did you use in your project? E.g. React, Redux...`,
       markdown: `
   ## Tech Stack
   
@@ -291,6 +318,7 @@ const sections = [
     {
       id: 'optimizations',
       name: 'Optimizations',
+      description: `What optimizations did you make in your code? E.g. refactors, etc.`,
       markdown: `
   ## Optimizations
   
@@ -301,6 +329,7 @@ const sections = [
     {
       id: 'lessons',
       name: 'Lessons',
+      description: `What did you learn while building this project? Any challenges?`,
       markdown: `
   ## Lessons Learned
   
@@ -311,6 +340,7 @@ const sections = [
     {
       id: 'faq',
       name: 'FAQ',
+      description: `Answer what you would expect as frequently asked questions.`,
       markdown: `
   ## FAQ
   
@@ -327,6 +357,7 @@ const sections = [
     {
       id: 'used-by',
       name: 'Used By',
+      description: `Include organisations that are currently using this project.`,
       markdown: `
   ## Used By
   
@@ -340,6 +371,7 @@ const sections = [
     {
       id: 'documentation',
       name: 'Documentation',
+      description: `Include a link to a detailed documentation of the project.`,
       markdown: `
   ## Documentation
   
@@ -350,6 +382,7 @@ const sections = [
     {
       id: 'deployment',
       name: 'Deployment',
+      description: `Listing specific steps helps remove ambiguity and confusion.`,
       markdown: `
   ## Deployment
   
@@ -364,6 +397,7 @@ const sections = [
     {
       id: 'appendix',
       name: 'Appendix',
+      description: `Add any additionnal information in the appendix of the readme.`,
       markdown: `
   ## Appendix
   
@@ -374,14 +408,16 @@ const sections = [
     {
       id: 'github-profile-intro',
       name: 'Github Profile - Introduction',
+      description: `Add a brief introduction. Example: 'Hi, I'm John Doe! 👋'`,
       markdown: `
-  # Hi, I'm Katherine! 👋
+  # Hi, I'm John Doe! 👋
   
   `,
     },
     {
       id: 'github-profile-about-me',
       name: 'Github Profile - About Me',
+      description: `Say a few things about yourself. Example: 'I'm a developer...'`,
       markdown: `
   ## 🚀 About Me
   I'm a full stack developer...
@@ -391,6 +427,7 @@ const sections = [
     {
       id: 'github-profile-skills',
       name: 'Github Profile - Skills',
+      description: `List your skills, all of your skills, the more the merrier :)`,
       markdown: `
   ## 🛠 Skills
   Javascript, HTML, CSS...
@@ -400,6 +437,7 @@ const sections = [
     {
       id: 'github-profile-links',
       name: 'Github Profile - Links',
+      description: `List your socials or other links, nicely displayed in badges.`,
       markdown: `
   ## 🔗 Links
   [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
@@ -411,6 +449,7 @@ const sections = [
     {
       id: 'github-profile-other',
       name: 'Github Profile - Other',
+      description: `What are you currently working on? Learning? Fun Facts?`,
       markdown: `
   ## Other Common Github Profile Sections
   👩‍💻 I'm currently working on...
@@ -434,6 +473,7 @@ const sections = [
     {
       id: 'colorreference',
       name: 'Color Reference',
+      description: `Add a nicely formatted table to provide color reference.`,
       markdown: `## Color Reference
   
   | Color             | Hex                                                                |
@@ -445,6 +485,16 @@ const sections = [
   
   `,
     },
+    {
+        id: 'attribution',
+        name: 'Attribution',
+        description: `Because you're awesome and enjoy Simply Made Readme.`,
+        markdown: `##
+
+This readme was made with [Simply Made Readme](https://simplymadereadme.com).
+    
+    `,
+      },
   ]
 
 export default sections;
