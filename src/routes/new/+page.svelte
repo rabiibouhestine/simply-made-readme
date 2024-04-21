@@ -47,7 +47,7 @@
 					alt="editor screenshot"
 					class="rounded-lg w-80 border group-hover:border-primary-600 transition duration-150 ease-in-out"
 				/>
-				<p class="text-lg font-medium">{type.label}</p>
+				<p class="text-lg font-medium dark:text-gray-300">{type.label}</p>
 			</a>
 		{/each}
 	</div>

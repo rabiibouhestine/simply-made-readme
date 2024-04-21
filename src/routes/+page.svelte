@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	<img src="/editor.png" alt="editor screenshot" class="border rounded-lg max-w-6xl mx-auto" />
-	<p class="flex gap-1 dark:text-gray-400">
+	<p class="flex gap-1 dark:text-gray-300">
 		Made with <span class="text-red-500">♡</span> by
 		<a href="https://rabiibouhestine.com" target="_blank" class="text-primary-600 hover:underline">
 			Rabii Bouhestine
