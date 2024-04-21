@@ -94,9 +94,7 @@
 				}}
 				class="bg-white text-gray-500 p-4 border rounded-r-lg group"
 			>
-				<TrashBinOutline
-					class="w-6 h-6 group-hover:text-red-500 group-hover:scale-105 transition duration-150 ease-in-out"
-				/>
+				<TrashBinOutline class="w-6 h-6 group-hover:text-red-500" />
 			</button>
 		</div>
 	{/each}

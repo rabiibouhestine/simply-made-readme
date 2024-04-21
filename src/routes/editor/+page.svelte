@@ -121,7 +121,7 @@
 	}
 </script>
 
-<div class="flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
+<div class="w-full flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
 	<Button on:click={() => (showNewReadmeModal = true)}>
 		<UserCircleSolid class="w-3 h-3 me-2" />
 		New Readme
@@ -138,7 +138,7 @@
 	</ButtonGroup>
 </div>
 
-<div class="flex gap-6 justify-between max-w-7xl mx-auto mt-6">
+<div class="grow pb-6 w-full flex gap-6 justify-between max-w-7xl mx-auto mt-6">
 	{#if showTextEditor}
 		<div class="w-full flex flex-col">
 			<div class="flex">
@@ -192,7 +192,7 @@
 		</div>
 	{/if}
 	<div class="flex flex-col gap-4 w-full">
-		<div class="markdown-body w-full h-[550px] rounded-lg border p-4 overflow-scroll">
+		<div class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll">
 			{@html style}
 			{@html marked(concatenatedMarkdown)}
 		</div>
