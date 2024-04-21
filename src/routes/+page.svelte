@@ -17,11 +17,11 @@
 		</P>
 		<div class="flex flex-col gap-2 items-center">
 			<Button size="xl" href="/new" class="px-10">Make a Readme</Button>
-			<p class="text-sm text-slate-600">No sign up required</p>
+			<p class="text-sm text-slate-600 dark:text-gray-400">No sign up required</p>
 		</div>
 	</div>
 	<img src="/editor.png" alt="editor screenshot" class="border rounded-lg max-w-6xl mx-auto" />
-	<p class="flex gap-1">
+	<p class="flex gap-1 dark:text-gray-400">
 		Made with <span class="text-red-500">♡</span> by
 		<a href="https://rabiibouhestine.com" target="_blank" class="text-primary-600 hover:underline">
 			Rabii Bouhestine
