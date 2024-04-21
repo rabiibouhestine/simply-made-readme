@@ -5,7 +5,7 @@
 	import { DarkMode } from 'flowbite-svelte';
 </script>
 
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen px-4">
 	<Navbar class="bg-gray-50">
 		<NavBrand href="/">
 			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">

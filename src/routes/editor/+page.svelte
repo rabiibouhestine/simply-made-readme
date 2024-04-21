@@ -124,7 +124,7 @@
 
 <div class="grow flex flex-col">
 	<div
-		class="w-full flex justify-between max-w-7xl mx-auto border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2"
+		class="container mx-auto w-full flex justify-between border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2"
 	>
 		<Button on:click={() => (showNewReadmeModal = true)} color="light">
 			<InfoCircleOutline class="w-4 h-4 me-2" />
@@ -142,7 +142,7 @@
 		</div>
 	</div>
 
-	<div class="full-height w-full flex gap-6 justify-between max-w-7xl mx-auto py-6">
+	<div class="full-height container mx-auto w-full flex gap-6 justify-between py-6">
 		{#if showTextEditor}
 			<div class="w-full h-full">
 				<div
