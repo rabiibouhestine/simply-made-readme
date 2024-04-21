@@ -102,7 +102,7 @@ const sections = [
     {
       id: 'features',
       name: 'Features',
-      description: `List the features of your project to highlight what sets apart.`,
+      description: `List the features of your project to highlight what sets it apart.`,
       markdown: `
   ## Features
   
