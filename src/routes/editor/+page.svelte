@@ -141,7 +141,9 @@
 
 <div class="grow pb-6 w-full flex gap-6 justify-between max-w-7xl mx-auto mt-6">
 	{#if showTextEditor}
-		<div class="w-full flex flex-col gap-2 border border-gray-200 rounded-lg p-4 bg-white">
+		<div
+			class="w-full flex flex-col gap-2 border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700"
+		>
 			<div class="flex gap-2">
 				<Textarea
 					id="textarea-id"
