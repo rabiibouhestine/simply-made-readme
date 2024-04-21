@@ -196,8 +196,13 @@
 						reconcatenateMarkdown();
 					}}
 				/>
-				<Button on:click={() => (showAddSectionModal = true)} class="w-full" color="light">
-					<CirclePlusOutline class="w-4 h-4 mr-2" />
+				<Button
+					on:click={() => (showAddSectionModal = true)}
+					class="w-full"
+					color="light"
+					size="xl"
+				>
+					<CirclePlusOutline class="w-5 h-5 mr-2" />
 					Add Section
 				</Button>
 			</div>
@@ -213,25 +218,20 @@
 	</div>
 </div>
 
-<Modal bind:open={showAddSectionModal} size="xl" autoclose>
+<Modal bind:open={showAddSectionModal} size="sm" autoclose>
 	<h2 class="text-4xl text-gray-900 dark:text-white">Add Section</h2>
-	<div class="grid grid-cols-4 gap-4">
+	<div class="flex flex-col gap-4">
 		{#each premadeSections as section}
-			<button
+			<Button
 				on:click={() => {
 					addSection(section.id);
 				}}
-				class="text-left hover:scale-105 transition duration-150 ease-in-out"
+				color="light"
+				size="xl"
+				class="justify-start"
 			>
-				<Card>
-					<h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
-						{section.name}
-					</h5>
-					<p class="font-normal text-gray-500 dark:text-gray-400">
-						{section.description || 'Lurum Ipsum Bla bla bla bla'}
-					</p>
-				</Card>
-			</button>
+				{section.name}
+			</Button>
 		{/each}
 	</div>
 </Modal>
