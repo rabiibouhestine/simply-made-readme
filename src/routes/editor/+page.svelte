@@ -194,7 +194,7 @@
 						reconcatenateMarkdown();
 					}}
 				/>
-				<Button on:click={() => (showAddSectionModal = true)} class="w-full">
+				<Button on:click={() => (showAddSectionModal = true)} class="w-full" color="light">
 					<CirclePlusOutline class="w-4 h-4 mr-2" />
 					Add Section
 				</Button>
