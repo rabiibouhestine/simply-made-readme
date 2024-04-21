@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { marked } from 'marked';
+	import { v4 as uuidv4 } from 'uuid';
 	import { ButtonGroup, Button, Card, Modal } from 'flowbite-svelte';
 	import { page } from '$app/stores';
 	import SectionList from '$lib/components/SectionList.svelte';
@@ -77,8 +78,14 @@
 		// Get selected section from premadeSections
 		const selectedSection = premadeSections.find((section) => section.id === id);
 
+		// Copy selected section
+		const copiedSection = { ...selectedSection };
+
+		// Generate a new id for the copied section
+		copiedSection.id = uuidv4();
+
 		// Append selected section to the sections
-		sections = [...sections, { ...selectedSection }];
+		sections = [...sections, copiedSection];
 
 		// Update concatenated markdown
 		reconcatenateMarkdown();
