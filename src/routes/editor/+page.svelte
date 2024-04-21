@@ -122,7 +122,9 @@
 	}
 </script>
 
-<div class="w-full flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-2">
+<div
+	class="w-full flex justify-between max-w-7xl mx-auto border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2"
+>
 	<Button on:click={() => (showNewReadmeModal = true)}>
 		<UserCircleSolid class="w-4 h-4 me-2" />
 		New Readme
@@ -173,7 +175,7 @@
 			/>
 		</div>
 	{:else}
-		<div class="flex flex-col gap-2 w-full h-[550px] overflow-scroll no-scrollbar">
+		<div class="flex flex-col items-center gap-2 w-full h-[550px] overflow-scroll no-scrollbar">
 			<SectionList
 				items={sections}
 				on:editSection={(event) => {
@@ -191,14 +193,16 @@
 					reconcatenateMarkdown();
 				}}
 			/>
-			<Button on:click={() => (showAddSectionModal = true)}>
+			<Button on:click={() => (showAddSectionModal = true)} class="w-full">
 				<CirclePlusOutline class="w-4 h-4 mr-2" />
 				Add Section
 			</Button>
 		</div>
 	{/if}
 	<div class="flex flex-col gap-4 w-full">
-		<div class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll">
+		<div
+			class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll dark:bg-gray-800 dark:text-white dark:border-gray-700"
+		>
 			{@html style}
 			{@html marked(concatenatedMarkdown)}
 		</div>
