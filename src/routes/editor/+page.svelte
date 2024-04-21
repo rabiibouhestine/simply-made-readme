@@ -142,7 +142,7 @@
 		</ButtonGroup>
 	</div>
 
-	<div class="grow pb-6 w-full flex gap-6 justify-between max-w-7xl mx-auto mt-6">
+	<div class="full-screen w-full flex gap-6 justify-between max-w-7xl mx-auto py-6">
 		{#if showTextEditor}
 			<div
 				class="w-full flex flex-col gap-2 border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700"
@@ -176,7 +176,7 @@
 				/>
 			</div>
 		{:else}
-			<div class="flex flex-col items-center gap-2 w-full h-[550px] overflow-scroll no-scrollbar">
+			<div class="flex flex-col items-center gap-2 w-full h-full overflow-scroll no-scrollbar">
 				<SectionList
 					items={sections}
 					on:editSection={(event) => {
@@ -270,3 +270,9 @@
 <Modal bind:open={showCopyModal} size="xs" autoclose>
 	<ExportModal message="Readme Copied to Clipboard" />
 </Modal>
+
+<style>
+	.full-screen {
+		height: calc(100vh - 150px);
+	}
+</style>
