@@ -218,8 +218,7 @@
 	</div>
 </div>
 
-<Modal bind:open={showAddSectionModal} size="sm" autoclose>
-	<h2 class="text-4xl text-gray-900 dark:text-white">Add Section</h2>
+<Modal title="Add Section" bind:open={showAddSectionModal} size="sm" autoclose>
 	<div class="flex flex-col gap-4">
 		{#each premadeSections as section}
 			<Button
