@@ -78,7 +78,7 @@
 		const selectedSection = premadeSections.find((section) => section.id === id);
 
 		// Append selected section to the sections
-		sections = [...sections, selectedSection];
+		sections = [...sections, { ...selectedSection }];
 
 		// Update concatenated markdown
 		reconcatenateMarkdown();
