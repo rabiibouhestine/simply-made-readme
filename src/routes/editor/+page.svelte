@@ -122,89 +122,91 @@
 	}
 </script>
 
-<div
-	class="w-full flex justify-between max-w-7xl mx-auto border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2"
->
-	<Button on:click={() => (showNewReadmeModal = true)}>
-		<UserCircleSolid class="w-4 h-4 me-2" />
-		New Readme
-	</Button>
-	<ButtonGroup>
-		<Button on:click={handleCopy}>
-			<ClipboardSolid class="w-4 h-4 me-2" />
-			Copy
+<div class="grow flex flex-col">
+	<div
+		class="w-full flex justify-between max-w-7xl mx-auto border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2"
+	>
+		<Button on:click={() => (showNewReadmeModal = true)}>
+			<UserCircleSolid class="w-4 h-4 me-2" />
+			New Readme
 		</Button>
-		<Button on:click={handleDownload}>
-			<DownloadSolid class="w-4 h-4 me-2" />
-			Download
-		</Button>
-	</ButtonGroup>
-</div>
+		<ButtonGroup>
+			<Button on:click={handleCopy}>
+				<ClipboardSolid class="w-4 h-4 me-2" />
+				Copy
+			</Button>
+			<Button on:click={handleDownload}>
+				<DownloadSolid class="w-4 h-4 me-2" />
+				Download
+			</Button>
+		</ButtonGroup>
+	</div>
 
-<div class="grow pb-6 w-full flex gap-6 justify-between max-w-7xl mx-auto mt-6">
-	{#if showTextEditor}
-		<div
-			class="w-full flex flex-col gap-2 border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700"
-		>
-			<div class="flex gap-2">
+	<div class="grow pb-6 w-full flex gap-6 justify-between max-w-7xl mx-auto mt-6">
+		{#if showTextEditor}
+			<div
+				class="w-full flex flex-col gap-2 border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700"
+			>
+				<div class="flex gap-2">
+					<Textarea
+						id="textarea-id"
+						placeholder="Enter Section Name here"
+						rows="1"
+						name="name"
+						unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 resize-none"
+						bind:value={sectionNameInput}
+						on:input={updateSectionName}
+					/>
+					<Button on:click={() => (showTextEditor = false)}>
+						<CloseCircleSolid class="w-4 h-4 me-2" />
+						Close
+					</Button>
+				</div>
 				<Textarea
 					id="textarea-id"
-					placeholder="Enter Section Name here"
-					rows="1"
-					name="name"
-					unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 resize-none"
-					bind:value={sectionNameInput}
-					on:input={updateSectionName}
+					placeholder="Enter markdown here"
+					rows="4"
+					name="markdown"
+					unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 h-full resize-none"
+					bind:value={markdownInput}
+					on:input={() => {
+						updateSectionMarkdown();
+						reconcatenateMarkdown();
+					}}
 				/>
-				<Button on:click={() => (showTextEditor = false)}>
-					<CloseCircleSolid class="w-4 h-4 me-2" />
-					Close
+			</div>
+		{:else}
+			<div class="flex flex-col items-center gap-2 w-full h-[550px] overflow-scroll no-scrollbar">
+				<SectionList
+					items={sections}
+					on:editSection={(event) => {
+						currentSectionID = event.detail.id;
+						sectionNameInput = sections.find((section) => section.id === event.detail.id).name;
+						markdownInput = sections.find((section) => section.id === event.detail.id).markdown;
+						showTextEditor = true;
+					}}
+					on:deleteSection={(event) => {
+						currentSectionID = event.detail.id;
+						showDeleteSectionModal = true;
+					}}
+					on:listUpdated={(e) => {
+						sections = e.detail.items;
+						reconcatenateMarkdown();
+					}}
+				/>
+				<Button on:click={() => (showAddSectionModal = true)} class="w-full">
+					<CirclePlusOutline class="w-4 h-4 mr-2" />
+					Add Section
 				</Button>
 			</div>
-			<Textarea
-				id="textarea-id"
-				placeholder="Enter markdown here"
-				rows="4"
-				name="markdown"
-				unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 h-full resize-none"
-				bind:value={markdownInput}
-				on:input={() => {
-					updateSectionMarkdown();
-					reconcatenateMarkdown();
-				}}
-			/>
-		</div>
-	{:else}
-		<div class="flex flex-col items-center gap-2 w-full h-[550px] overflow-scroll no-scrollbar">
-			<SectionList
-				items={sections}
-				on:editSection={(event) => {
-					currentSectionID = event.detail.id;
-					sectionNameInput = sections.find((section) => section.id === event.detail.id).name;
-					markdownInput = sections.find((section) => section.id === event.detail.id).markdown;
-					showTextEditor = true;
-				}}
-				on:deleteSection={(event) => {
-					currentSectionID = event.detail.id;
-					showDeleteSectionModal = true;
-				}}
-				on:listUpdated={(e) => {
-					sections = e.detail.items;
-					reconcatenateMarkdown();
-				}}
-			/>
-			<Button on:click={() => (showAddSectionModal = true)} class="w-full">
-				<CirclePlusOutline class="w-4 h-4 mr-2" />
-				Add Section
-			</Button>
-		</div>
-	{/if}
-	<div class="flex flex-col gap-4 w-full">
-		<div
-			class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll dark:bg-gray-800 dark:text-white dark:border-gray-700"
-		>
-			{@html style}
-			{@html marked(concatenatedMarkdown)}
+		{/if}
+		<div class="flex flex-col gap-4 w-full">
+			<div
+				class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll dark:bg-gray-800 dark:text-white dark:border-gray-700"
+			>
+				{@html style}
+				{@html marked(concatenatedMarkdown)}
+			</div>
 		</div>
 	</div>
 </div>

@@ -22,7 +22,5 @@
 			<DarkMode />
 		</NavUl>
 	</Navbar>
-	<div class="bg-gray-50 dark:bg-gray-900 grow flex flex-col">
-		<slot />
-	</div>
+	<slot />
 </div>
