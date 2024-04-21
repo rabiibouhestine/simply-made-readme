@@ -5,7 +5,7 @@
 	import { DarkMode } from 'flowbite-svelte';
 </script>
 
-<Navbar>
+<Navbar class="bg-gray-50">
 	<NavBrand href="/">
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
 			Simply Made Readme
@@ -21,4 +21,6 @@
 		<DarkMode />
 	</NavUl>
 </Navbar>
-<slot />
+<div class="bg-gray-50 dark:bg-gray-900">
+	<slot />
+</div>

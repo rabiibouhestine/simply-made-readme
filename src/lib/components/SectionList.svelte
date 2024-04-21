@@ -75,7 +75,7 @@
 				on:mousedown={startDrag}
 				on:touchstart={startDrag}
 				on:keydown={handleKeyDown}
-				class="bg-gray-50 p-4 border flex rounded-l-lg"
+				class="bg-white p-4 border flex rounded-l-lg"
 			>
 				<DotsVerticalOutline class="w-6 h-6" />
 				<DotsVerticalOutline class="w-6 h-6 -ml-4" />
@@ -84,7 +84,7 @@
 				on:click={() => {
 					editSection(item.id);
 				}}
-				class="bg-gray-50 p-4 border-t border-b grow text-left hover:text-primary-600"
+				class="bg-white p-4 border-t border-b grow text-left hover:text-primary-600"
 			>
 				{item.name}
 			</button>
@@ -92,7 +92,7 @@
 				on:click={() => {
 					deleteSection(item.id);
 				}}
-				class="bg-gray-50 text-gray-500 p-4 border rounded-r-lg group"
+				class="bg-white text-gray-500 p-4 border rounded-r-lg group"
 			>
 				<TrashBinOutline
 					class="w-6 h-6 group-hover:text-red-500 group-hover:scale-105 transition duration-150 ease-in-out"
