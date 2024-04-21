@@ -493,7 +493,6 @@ const sections = [
 \\
 \\
 \\
-\\
 This readme was made with [Simply Made Readme](https://simplymadereadme.com).
     
     `,
