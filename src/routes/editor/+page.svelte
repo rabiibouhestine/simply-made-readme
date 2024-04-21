@@ -122,7 +122,7 @@
 	}
 </script>
 
-<div class="w-full flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-1">
+<div class="w-full flex justify-between max-w-7xl mx-auto border bg-gray-50 rounded-lg p-2">
 	<Button on:click={() => (showNewReadmeModal = true)}>
 		<UserCircleSolid class="w-3 h-3 me-2" />
 		New Readme
@@ -191,8 +191,8 @@
 					reconcatenateMarkdown();
 				}}
 			/>
-			<Button on:click={() => (showAddSectionModal = true)} class="py-4">
-				<CirclePlusOutline class="w-4 h-4 mr-2" />
+			<Button on:click={() => (showAddSectionModal = true)} size="lg">
+				<CirclePlusOutline class="w-5 h-5 mr-2" />
 				Add Section
 			</Button>
 		</div>
