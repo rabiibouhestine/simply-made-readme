@@ -144,9 +144,9 @@
 
 	<div class="full-height w-full flex gap-6 justify-between max-w-7xl mx-auto py-6">
 		{#if showTextEditor}
-			<div class="w-full">
+			<div class="w-full h-full">
 				<div
-					class="w-full flex flex-col gap-2 border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700"
+					class="w-full h-full flex flex-col gap-2 border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700"
 				>
 					<div class="flex gap-2">
 						<Textarea
