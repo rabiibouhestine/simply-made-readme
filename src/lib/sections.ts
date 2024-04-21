@@ -489,8 +489,11 @@ const sections = [
         id: 'attribution',
         name: 'Attribution',
         description: `Because you're awesome and enjoy Simply Made Readme.`,
-        markdown: `##
-
+        markdown: `
+\\
+\\
+\\
+\\
 This readme was made with [Simply Made Readme](https://simplymadereadme.com).
     
     `,
