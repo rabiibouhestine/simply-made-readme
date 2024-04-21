@@ -144,36 +144,38 @@
 
 	<div class="full-height w-full flex gap-6 justify-between max-w-7xl mx-auto py-6">
 		{#if showTextEditor}
-			<div
-				class="w-full flex flex-col gap-2 border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700"
-			>
-				<div class="flex gap-2">
+			<div class="w-full">
+				<div
+					class="w-full flex flex-col gap-2 border rounded-lg p-4 bg-white dark:bg-gray-800 dark:border-gray-700"
+				>
+					<div class="flex gap-2">
+						<Textarea
+							id="textarea-id"
+							placeholder="Enter Section Name here"
+							rows="1"
+							name="name"
+							unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 resize-none"
+							bind:value={sectionNameInput}
+							on:input={updateSectionName}
+						/>
+						<Button on:click={() => (showTextEditor = false)}>
+							<CloseCircleSolid class="w-4 h-4 me-2" />
+							Close
+						</Button>
+					</div>
 					<Textarea
 						id="textarea-id"
-						placeholder="Enter Section Name here"
-						rows="1"
-						name="name"
-						unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 resize-none"
-						bind:value={sectionNameInput}
-						on:input={updateSectionName}
+						placeholder="Enter markdown here"
+						rows="4"
+						name="markdown"
+						unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 h-full resize-none"
+						bind:value={markdownInput}
+						on:input={() => {
+							updateSectionMarkdown();
+							reconcatenateMarkdown();
+						}}
 					/>
-					<Button on:click={() => (showTextEditor = false)}>
-						<CloseCircleSolid class="w-4 h-4 me-2" />
-						Close
-					</Button>
 				</div>
-				<Textarea
-					id="textarea-id"
-					placeholder="Enter markdown here"
-					rows="4"
-					name="markdown"
-					unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 h-full resize-none"
-					bind:value={markdownInput}
-					on:input={() => {
-						updateSectionMarkdown();
-						reconcatenateMarkdown();
-					}}
-				/>
 			</div>
 		{:else}
 			<div class="flex flex-col items-center gap-2 w-full h-full overflow-scroll no-scrollbar">
