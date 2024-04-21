@@ -13,7 +13,7 @@
 	let sections: any[] = (templates as any)[template];
 
 	import {
-		UserCircleSolid,
+		InfoCircleOutline,
 		ExclamationCircleOutline,
 		DownloadSolid,
 		ClipboardSolid,
@@ -126,12 +126,12 @@
 	<div
 		class="w-full flex justify-between max-w-7xl mx-auto border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2"
 	>
-		<Button on:click={() => (showNewReadmeModal = true)}>
-			<UserCircleSolid class="w-4 h-4 me-2" />
+		<Button on:click={() => (showNewReadmeModal = true)} color="light">
+			<InfoCircleOutline class="w-4 h-4 me-2" />
 			New Readme
 		</Button>
-		<ButtonGroup>
-			<Button on:click={handleCopy}>
+		<div class="flex gap-2">
+			<Button on:click={handleCopy} color="light">
 				<ClipboardSolid class="w-4 h-4 me-2" />
 				Copy
 			</Button>
@@ -139,7 +139,7 @@
 				<DownloadSolid class="w-4 h-4 me-2" />
 				Download
 			</Button>
-		</ButtonGroup>
+		</div>
 	</div>
 
 	<div class="full-height w-full flex gap-6 justify-between max-w-7xl mx-auto py-6">
