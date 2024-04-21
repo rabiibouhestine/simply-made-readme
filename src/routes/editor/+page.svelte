@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { marked } from 'marked';
 	import { v4 as uuidv4 } from 'uuid';
-	import { ButtonGroup, Button, Card, Modal } from 'flowbite-svelte';
+	import { ButtonGroup, Button, Card, Modal, Textarea } from 'flowbite-svelte';
 	import { page } from '$app/stores';
 	import SectionList from '$lib/components/SectionList.svelte';
 	import ExportModal from '$lib/components/ExportModal.svelte';
@@ -17,7 +17,8 @@
 		ExclamationCircleOutline,
 		DownloadSolid,
 		ClipboardSolid,
-		CirclePlusOutline
+		CirclePlusOutline,
+		CloseCircleSolid
 	} from 'flowbite-svelte-icons';
 
 	let style = GithubStyle;
@@ -140,25 +141,28 @@
 
 <div class="grow pb-6 w-full flex gap-6 justify-between max-w-7xl mx-auto mt-6">
 	{#if showTextEditor}
-		<div class="w-full flex flex-col">
-			<div class="flex">
-				<textarea
-					class="border rounded-tl-lg grow border-gray-200 focus:border-gray-200 focus:ring-0 resize-none"
+		<div class="w-full flex flex-col gap-2 border border-gray-200 rounded-lg p-4 bg-white">
+			<div class="flex gap-2">
+				<Textarea
+					id="textarea-id"
+					placeholder="Enter Section Name here"
+					rows="1"
+					name="name"
+					unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 resize-none"
 					bind:value={sectionNameInput}
 					on:input={updateSectionName}
 				/>
-				<button
-					on:click={() => {
-						showTextEditor = false;
-					}}
-					class="border border-l-0 rounded-tr-lg p-4"
-				>
-					<h2>Close</h2>
-				</button>
+				<Button on:click={() => (showTextEditor = false)}>
+					<CloseCircleSolid class="w-4 h-4 me-2" />
+					Close
+				</Button>
 			</div>
-			<textarea
-				class="h-full rounded-b-lg border-t-0 border-gray-200 focus:border-gray-200 focus:ring-0 resize-none"
+			<Textarea
+				id="textarea-id"
 				placeholder="Enter markdown here"
+				rows="4"
+				name="markdown"
+				unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 h-full resize-none"
 				bind:value={markdownInput}
 				on:input={() => {
 					updateSectionMarkdown();
