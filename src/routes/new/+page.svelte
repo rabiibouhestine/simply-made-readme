@@ -14,11 +14,6 @@
 		},
 		{
 			img: 'https://resumeninja.io/harvard-template.jpg',
-			label: 'Empty',
-			link: '/editor?template=empty'
-		},
-		{
-			img: 'https://resumeninja.io/harvard-template.jpg',
 			label: 'API',
 			link: '/editor?template=api'
 		}

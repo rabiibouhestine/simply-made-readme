@@ -21,17 +21,6 @@ This project is used by the following companies:
 		{ id: 8, name: 'Attribution (Not Required)', markdown: '' },
 		{ id: 9, name: 'Title', markdown: '' },
 		{ id: 10, name: 'Description', markdown: '' }
-	],
-    'empty': [
-		{
-			id: 1,
-			name: 'Title and Description',
-			markdown: `# Title
-
-This project is awesome!
-
-`
-		}
 	]
 }
 
