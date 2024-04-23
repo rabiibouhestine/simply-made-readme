@@ -42,7 +42,12 @@
 				Rabii Bouhestine
 			</a>
 		</P>
-		<Button href="/" color="light" class="w-fit">
+		<Button
+			href="https://github.com/rabiibouhestine/simply-made-readme"
+			target="_blank"
+			color="light"
+			class="w-fit"
+		>
 			<GithubSolid class="w-4 h-4 me-2" />
 			Star on Github
 		</Button>
