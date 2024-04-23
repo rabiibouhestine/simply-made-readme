@@ -31,6 +31,7 @@
 
 	let markdownInput = '';
 	let sectionNameInput = '';
+	let sectionSearch = '';
 
 	let showNewReadmeModal = false;
 	let showAddSectionModal = false;
@@ -223,7 +224,9 @@
 
 <Modal title="Add Section" bind:open={showAddSectionModal} size="sm" autoclose>
 	<div class="flex flex-col gap-4">
-		{#each premadeSections as section}
+		{#each premadeSections.filter((section) => section.name
+				.toLowerCase()
+				.includes(sectionSearch)) as section}
 			<Button
 				on:click={() => {
 					addSection(section.id);
@@ -238,6 +241,7 @@
 	</div>
 	<svelte:fragment slot="footer">
 		<Textarea
+			bind:value={sectionSearch}
 			id="textarea-id"
 			placeholder="Search section..."
 			rows="1"
