@@ -1,5 +1,6 @@
 <script>
 	import { Heading, P, Button } from 'flowbite-svelte';
+	import { GithubSolid } from 'flowbite-svelte-icons';
 </script>
 
 <div class="flex flex-col gap-32 my-32 items-center">
@@ -30,10 +31,20 @@
 		alt="editor screenshot"
 		class="hidden dark:flex border border-gray-700 rounded-lg max-w-6xl mx-auto"
 	/>
-	<P class="flex gap-1 ">
-		Made with <span class="text-primary-600">♡</span> by
-		<a href="https://rabiibouhestine.com" target="_blank" class="text-primary-600 hover:underline">
-			Rabii Bouhestine
-		</a>
-	</P>
+	<div class="flex flex-col items-center gap-4">
+		<P class="flex gap-1 ">
+			Made with <span class="text-primary-600">♡</span> by
+			<a
+				href="https://rabiibouhestine.com"
+				target="_blank"
+				class="text-primary-600 hover:underline"
+			>
+				Rabii Bouhestine
+			</a>
+		</P>
+		<Button href="/" color="light" class="w-fit">
+			<GithubSolid class="w-4 h-4 me-2" />
+			Star on Github
+		</Button>
+	</div>
 </div>
