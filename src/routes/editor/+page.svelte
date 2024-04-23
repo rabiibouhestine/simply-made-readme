@@ -230,6 +230,7 @@
 			<Button
 				on:click={() => {
 					addSection(section.id);
+					sectionSearch = '';
 				}}
 				color="light"
 				size="xl"
