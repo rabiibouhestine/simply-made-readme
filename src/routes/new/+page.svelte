@@ -3,17 +3,17 @@
 
 	const types = [
 		{
-			img: 'https://resumeninja.io/lemo-template.jpg',
+			img: 'https://placehold.co/318x450',
 			label: 'Empty Readme',
 			link: '/editor?template=empty'
 		},
 		{
-			img: 'https://resumeninja.io/classic-template.jpg',
+			img: 'https://placehold.co/318x450',
 			label: 'Github Profile',
 			link: '/editor?template=profile'
 		},
 		{
-			img: 'https://resumeninja.io/harvard-template.jpg',
+			img: 'https://placehold.co/318x450',
 			label: 'Project Readme',
 			link: '/editor?template=project'
 		}
