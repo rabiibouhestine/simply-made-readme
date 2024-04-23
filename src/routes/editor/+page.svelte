@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { marked } from 'marked';
 	import { v4 as uuidv4 } from 'uuid';
-	import { ButtonGroup, Button, Card, Modal, Textarea } from 'flowbite-svelte';
+	import { Button, Modal, Textarea } from 'flowbite-svelte';
 	import { page } from '$app/stores';
 	import SectionList from '$lib/components/SectionList.svelte';
 	import ExportModal from '$lib/components/ExportModal.svelte';
@@ -10,7 +10,10 @@
 	import GithubStyle from '$lib/githubStyle';
 
 	let template = $page.url.searchParams.get('template') || '';
-	let sections: any[] = (templates as any)[template];
+	let templateSectionsIDS: any[] = (templates as any)[template];
+	let sections: any[] = premadeSections.filter((section) =>
+		templateSectionsIDS.includes(section.id)
+	);
 
 	import {
 		InfoCircleOutline,

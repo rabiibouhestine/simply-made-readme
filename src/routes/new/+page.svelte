@@ -4,18 +4,18 @@
 	const types = [
 		{
 			img: 'https://resumeninja.io/lemo-template.jpg',
-			label: 'Profile',
-			link: '/editor?template=profile'
+			label: 'Empty Readme',
+			link: '/editor?template=empty'
 		},
 		{
 			img: 'https://resumeninja.io/classic-template.jpg',
-			label: 'Package',
-			link: '/editor?template=package'
+			label: 'Github Profile',
+			link: '/editor?template=profile'
 		},
 		{
 			img: 'https://resumeninja.io/harvard-template.jpg',
-			label: 'API',
-			link: '/editor?template=api'
+			label: 'Project Readme',
+			link: '/editor?template=project'
 		}
 	];
 </script>
