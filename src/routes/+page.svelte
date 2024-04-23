@@ -32,11 +32,7 @@
 		class="hidden dark:flex border border-gray-700 rounded-lg max-w-6xl mx-auto"
 	/>
 	<div class="flex flex-col gap-6">
-		<Heading
-			tag="h2"
-			class="mb-4"
-			customSize="text-center text-4xl font-extrabold  md:text-5xl lg:text-6xl"
-		>
+		<Heading tag="h2" class="mb-4" customSize="text-center font-extrabold  text-4xl lg:text-5xl">
 			Features
 		</Heading>
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
