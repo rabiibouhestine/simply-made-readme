@@ -8,7 +8,20 @@ const templates = {
 		'github-profile-other',
 		'attribution'
 	],
-    'project': []
+    'project': [
+		'title-and-description',
+		'badges',
+		'demo',
+		'installation',
+		'usage-examples',
+		'support',
+		'roadmap',
+		'contributing',
+		'authors',
+		'acknowledgement',
+		'license',
+		'attribution'
+	]
 }
 
 export default templates;

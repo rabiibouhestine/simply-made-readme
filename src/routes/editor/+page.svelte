@@ -11,8 +11,8 @@
 
 	let template = $page.url.searchParams.get('template') || '';
 	let templateSectionsIDS: any[] = (templates as any)[template];
-	let sections: any[] = premadeSections.filter((section) =>
-		templateSectionsIDS.includes(section.id)
+	let sections: any[] = templateSectionsIDS.map((id) =>
+		premadeSections.find((section) => section.id === id)
 	);
 
 	import {
