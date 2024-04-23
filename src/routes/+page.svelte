@@ -1,6 +1,6 @@
 <script>
-	import { Heading, P, Button } from 'flowbite-svelte';
-	import { GithubSolid } from 'flowbite-svelte-icons';
+	import { Heading, P, Button, Card } from 'flowbite-svelte';
+	import { GithubSolid, GiftBoxSolid } from 'flowbite-svelte-icons';
 </script>
 
 <div class="flex flex-col gap-32 my-32 items-center">
@@ -31,6 +31,30 @@
 		alt="editor screenshot"
 		class="hidden dark:flex border border-gray-700 rounded-lg max-w-6xl mx-auto"
 	/>
+	<div class="flex flex-col gap-6">
+		<Heading
+			tag="h2"
+			class="mb-4"
+			customSize="text-center text-4xl font-extrabold  md:text-5xl lg:text-6xl"
+		>
+			Features
+		</Heading>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+			{#each [1, 2, 3, 4, 5, 6] as feature}
+				<Card class="col-span-1">
+					<GiftBoxSolid class="w-8 h-8 mb-3 text-gray-500 dark:text-gray-400" />
+					<a href="/">
+						<h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+							Need a help in Claim?
+						</h5>
+					</a>
+					<p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
+						Go to this step by step guideline process on how to certify for your weekly benefits:
+					</p>
+				</Card>
+			{/each}
+		</div>
+	</div>
 	<div class="flex flex-col items-center gap-4">
 		<P class="flex gap-1 ">
 			Made with <span class="text-primary-600">♡</span> by
