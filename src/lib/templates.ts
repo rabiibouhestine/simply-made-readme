@@ -5,7 +5,8 @@ const templates = {
 		'github-profile-about-me',
 		'github-profile-skills',
 		'github-profile-links',
-		'github-profile-other'
+		'github-profile-other',
+		'attribution'
 	],
     'project': []
 }
