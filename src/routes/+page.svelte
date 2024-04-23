@@ -20,7 +20,16 @@
 			<p class="text-sm text-slate-600 dark:text-gray-400">No sign up required</p>
 		</div>
 	</div>
-	<img src="/editor.png" alt="editor screenshot" class="border rounded-lg max-w-6xl mx-auto" />
+	<img
+		src="/images/editorLight.png"
+		alt="editor screenshot"
+		class="flex dark:hidden border rounded-lg max-w-6xl mx-auto"
+	/>
+	<img
+		src="/images/editorDark.png"
+		alt="editor screenshot"
+		class="hidden dark:flex border border-gray-700 rounded-lg max-w-6xl mx-auto"
+	/>
 	<P class="flex gap-1 ">
 		Made with <span class="text-primary-600">♡</span> by
 		<a href="https://rabiibouhestine.com" target="_blank" class="text-primary-600 hover:underline">
