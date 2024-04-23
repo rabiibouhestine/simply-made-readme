@@ -236,6 +236,15 @@
 			</Button>
 		{/each}
 	</div>
+	<svelte:fragment slot="footer">
+		<Textarea
+			id="textarea-id"
+			placeholder="Search section..."
+			rows="1"
+			name="message"
+			unWrappedClass="p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 resize-none"
+		/>
+	</svelte:fragment>
 </Modal>
 <Modal bind:open={showNewReadmeModal} size="xs" autoclose>
 	<div class="text-center">
