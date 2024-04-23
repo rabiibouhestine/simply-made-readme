@@ -4,7 +4,7 @@
 
 <div class="flex flex-col items-center text-center">
 	<img src="/party.svg" alt="Success" class="w-20" />
-	<h3 class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">
+	<h3 class="text-lg font-normal text-gray-500 dark:text-gray-300 mb-8">
 		{message}
 	</h3>
 	<p class="text-sm mb-5">
