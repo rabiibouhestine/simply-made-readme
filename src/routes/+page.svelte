@@ -32,8 +32,8 @@
 		class="hidden dark:flex border border-gray-700 rounded-lg max-w-6xl mx-auto"
 	/>
 	<div class="flex flex-col items-center gap-4">
-		<P class="flex gap-1 ">
-			Made with <span class="text-primary-600">♡</span> by
+		<P class="flex gap-1 items-center">
+			Made with <span class="text-xl">☕</span> by
 			<a
 				href="https://rabiibouhestine.com"
 				target="_blank"
