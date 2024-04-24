@@ -24,14 +24,23 @@
 	<img
 		src="/images/editorLight.png"
 		alt="editor screenshot"
-		class="flex dark:hidden border rounded-lg max-w-6xl mx-auto"
+		class="flex dark:hidden border-4 rounded-lg w-full max-w-6xl mx-auto"
 	/>
 	<img
 		src="/images/editorDark.png"
 		alt="editor screenshot"
-		class="hidden dark:flex border border-gray-700 rounded-lg max-w-6xl mx-auto"
+		class="hidden dark:flex border-4 border-gray-700 rounded-lg w-full max-w-6xl mx-auto"
 	/>
-	<div class="flex flex-col items-center gap-4">
+	<div class="flex flex-col items-center gap-6">
+		<Button
+			href="https://github.com/rabiibouhestine/simply-made-readme"
+			target="_blank"
+			color="light"
+			class="w-fit"
+		>
+			<GithubSolid class="w-4 h-4 me-2" />
+			Star on Github
+		</Button>
 		<P class="flex gap-1 items-center">
 			Made with <span class="text-xl">☕</span> by
 			<a
@@ -42,14 +51,5 @@
 				Rabii Bouhestine
 			</a>
 		</P>
-		<Button
-			href="https://github.com/rabiibouhestine/simply-made-readme"
-			target="_blank"
-			color="light"
-			class="w-fit"
-		>
-			<GithubSolid class="w-4 h-4 me-2" />
-			Star on Github
-		</Button>
 	</div>
 </div>
