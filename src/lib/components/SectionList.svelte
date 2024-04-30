@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Sortable from 'sortablejs';
+	import { flip } from 'svelte/animate';
 	import { TrashBinOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
 	import { createEventDispatcher, onMount } from 'svelte';
 
@@ -45,7 +46,7 @@
 
 <div id="items" class="w-full flex flex-col gap-2">
 	{#each items as item (item.id)}
-		<div class="flex">
+		<div class="flex" animate:flip={{ duration: 200 }}>
 			<div
 				class="handle bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white p-4 border flex rounded-l-lg hover:cursor-grab"
 			>
