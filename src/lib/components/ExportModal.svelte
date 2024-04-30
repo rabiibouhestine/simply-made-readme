@@ -11,7 +11,7 @@
 		Thanks for using Simply Made Readme! Feel free to reach out to me with any feedback at
 		rabiibouhestine@gmail.com
 	</p>
-	<p class="text-sm mb-8">If you found this product helpful, consider supporting me!</p>
+	<!-- <p class="text-sm mb-8">If you found this product helpful, consider supporting me!</p>
 	<a
 		href="https://www.buymeacoffee.com/rabiibouhestine"
 		target="_blank"
@@ -22,5 +22,5 @@
 			alt="Buy Me A Coffee"
 			class="w-44"
 		/>
-	</a>
+	</a> -->
 </div>
