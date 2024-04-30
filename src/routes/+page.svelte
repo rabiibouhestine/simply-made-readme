@@ -32,7 +32,7 @@
 		class="hidden dark:flex border-4 border-gray-700 rounded-lg w-full max-w-6xl mx-auto"
 	/>
 	<div class="flex flex-col items-center gap-6">
-		<Button
+		<!-- <Button
 			href="https://github.com/rabiibouhestine/simply-made-readme"
 			target="_blank"
 			color="light"
@@ -40,7 +40,7 @@
 		>
 			<GithubSolid class="w-4 h-4 me-2" />
 			Star on Github
-		</Button>
+		</Button> -->
 		<P class="flex gap-1 items-center">
 			Made with <span class="text-xl">☕</span> by
 			<a

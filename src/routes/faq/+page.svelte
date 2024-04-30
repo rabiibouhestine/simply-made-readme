@@ -3,15 +3,9 @@
 </script>
 
 <div class="w-full max-w-5xl mx-auto flex flex-col gap-20 my-32 items-center">
-	<div class="flex flex-col items-center max-w-4xl mx-auto">
-		<Heading
-			tag="h1"
-			class="mb-4"
-			customSize="text-center text-4xl font-extrabold  md:text-5xl lg:text-6xl"
-		>
-			Frequently Asked Questions
-		</Heading>
-	</div>
+	<Heading tag="h1" class="mb-4" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl">
+		Frequently Asked Questions
+	</Heading>
 	<Accordion flush class="w-full">
 		<AccordionItem>
 			<span slot="header">How does the web app work without any sign-up or authentication?</span>
@@ -71,12 +65,12 @@
 		<AccordionItem>
 			<span slot="header">Can I suggest new features or report issues with the web app?</span>
 			<p class="mb-2 text-gray-500 dark:text-gray-400">
-				Absolutely! We welcome feedback, suggestions, and bug reports. Feel free to reach out to us
-				through our contact form or GitHub repository. We're constantly looking to improve the tool
-				based on user feedback.
+				Absolutely! We welcome feedback, suggestions, and bug reports. Feel free to reach out to
+				rabiibouhestine@gmail.com. We're constantly looking to improve the tool based on user
+				feedback.
 			</p>
 		</AccordionItem>
-		<AccordionItem>
+		<!-- <AccordionItem>
 			<span slot="header">Is the web app open source?</span>
 			<p class="mb-2 text-gray-500 dark:text-gray-400">
 				Yes, our web app is 100% open source. You can view the source code and contribute to its
@@ -91,6 +85,6 @@
 				GitHub, or by donating to help cover hosting costs. Every contribution, no matter how small,
 				is greatly appreciated and helps keep the project free for everyone.
 			</p>
-		</AccordionItem>
+		</AccordionItem> -->
 	</Accordion>
 </div>
