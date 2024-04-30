@@ -36,7 +36,7 @@ const sections = [
       name: 'Logo',
       description: `It can be a good idea to include a logo for your project.`,
       markdown: `
-  ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+  ![Logo](https://placehold.co/600x200)
   
   `,
     },
@@ -80,7 +80,7 @@ const sections = [
       markdown: `
   ## Screenshots
   
-  ![App Screenshot](https://via.placeholder.com/600x300?text=App+Screenshot+Here)
+  ![App Screenshot](https://placehold.co/600x400)
   
   `,
     },
@@ -239,7 +239,7 @@ const sections = [
       markdown: `
   ## Authors
   
-  - [@octokatherine](https://www.github.com/octokatherine)
+  - [@rabiibouhestine](https://www.github.com/rabiibouhestine)
   
   `,
     },
@@ -250,6 +250,7 @@ const sections = [
       markdown: `
   ## Acknowledgements
   
+   - [readme.so](https://readme.so/)
    - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
    - [Awesome README](https://github.com/matiassingers/awesome-readme)
    - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
@@ -287,7 +288,7 @@ const sections = [
   
   Here are some related projects
   
-  [Awesome README](https://github.com/matiassingers/awesome-readme)
+  [readme.so](https://readme.so/)
   
   `,
     },
@@ -440,7 +441,7 @@ const sections = [
       description: `List your socials or other links, nicely displayed in badges.`,
       markdown: `
   ## 🔗 Links
-  [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
+  [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://rabiibouhestine.com/)
   [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
   [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
   
