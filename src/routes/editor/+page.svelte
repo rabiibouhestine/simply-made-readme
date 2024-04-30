@@ -7,7 +7,8 @@
 	import ExportModal from '$lib/components/ExportModal.svelte';
 	import templates from '$lib/templates';
 	import premadeSections from '$lib/sections';
-	import GithubStyle from '$lib/githubStyle';
+	import GithubLight from '$lib/githubLight';
+	import GithubDark from '$lib/githubDark';
 
 	let template = $page.url.searchParams.get('template') || '';
 	let templateSectionsIDS: any[] = (templates as any)[template];
@@ -24,7 +25,6 @@
 		CloseCircleSolid
 	} from 'flowbite-svelte-icons';
 
-	let style = GithubStyle;
 	let showTextEditor = false;
 
 	let currentSectionID: any;
@@ -213,9 +213,15 @@
 		{/if}
 		<div class="flex flex-col gap-4 w-full">
 			<div
-				class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll dark:bg-gray-800 dark:text-white dark:border-gray-700"
+				class="markdown-body-dark w-full h-full rounded-lg border p-4 overflow-scroll hidden dark:block border-gray-700"
 			>
-				{@html style}
+				{@html GithubDark}
+				{@html marked(concatenatedMarkdown)}
+			</div>
+			<div
+				class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll block dark:hidden"
+			>
+				{@html GithubLight}
 				{@html marked(concatenatedMarkdown)}
 			</div>
 		</div>
