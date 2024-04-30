@@ -10,6 +10,10 @@
 	import GithubLight from '$lib/githubLight';
 	import GithubDark from '$lib/githubDark';
 
+	marked.use({
+		gfm: true
+	});
+
 	let template = $page.url.searchParams.get('template') || '';
 	let templateSectionsIDS: any[] = (templates as any)[template];
 	let sections: any[] = templateSectionsIDS.map((id) =>
@@ -216,13 +220,13 @@
 				class="markdown-body-dark w-full h-full rounded-lg border p-4 overflow-scroll hidden dark:block border-gray-700"
 			>
 				{@html GithubDark}
-				{@html marked(concatenatedMarkdown)}
+				{@html marked.parse(concatenatedMarkdown)}
 			</div>
 			<div
 				class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll block dark:hidden"
 			>
 				{@html GithubLight}
-				{@html marked(concatenatedMarkdown)}
+				{@html marked.parse(concatenatedMarkdown)}
 			</div>
 		</div>
 	</div>
