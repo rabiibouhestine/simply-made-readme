@@ -3,17 +3,20 @@
 
 	const types = [
 		{
-			img: 'https://placehold.co/318x450',
+			img: '/images/emptyLight.png',
+			imgDark: '/images/emptyDark.png',
 			label: 'Empty Readme',
 			link: '/editor?template=empty'
 		},
 		{
-			img: 'https://placehold.co/318x450',
+			img: '/images/profileLight.png',
+			imgDark: '/images/profileDark.png',
 			label: 'Github Profile',
 			link: '/editor?template=profile'
 		},
 		{
-			img: 'https://placehold.co/318x450',
+			img: '/images/projectLight.png',
+			imgDark: '/images/projectDark.png',
 			label: 'Project Readme',
 			link: '/editor?template=project'
 		}
@@ -40,7 +43,12 @@
 				<img
 					src={type.img}
 					alt="editor screenshot"
-					class="rounded-lg w-80 border group-hover:border-primary-600 transition duration-150 ease-in-out"
+					class="flex dark:hidden rounded-lg w-80 border group-hover:border-primary-600 transition duration-150 ease-in-out"
+				/>
+				<img
+					src={type.imgDark}
+					alt="editor screenshot"
+					class="hidden dark:flex rounded-lg w-80 border border-gray-700 group-hover:border-primary-600 transition duration-150 ease-in-out"
 				/>
 				<p class="text-lg font-medium dark:text-gray-300">{type.label}</p>
 			</a>

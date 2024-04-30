@@ -22,12 +22,12 @@
 		</div>
 	</div>
 	<img
-		src="/images/editorLight.png"
+		src="/images/editorLight.webp"
 		alt="editor screenshot"
 		class="flex dark:hidden border-4 rounded-lg w-full max-w-6xl mx-auto"
 	/>
 	<img
-		src="/images/editorDark.png"
+		src="/images/editorDark.webp"
 		alt="editor screenshot"
 		class="hidden dark:flex border-4 border-gray-700 rounded-lg w-full max-w-6xl mx-auto"
 	/>
