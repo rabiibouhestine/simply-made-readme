@@ -1,50 +1,11 @@
 <script lang="ts">
-	import { flip } from 'svelte/animate';
-	import { dndzone, SOURCES, TRIGGERS } from 'svelte-dnd-action';
+	import Sortable from 'sortablejs';
 	import { TrashBinOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 
 	export let items: any[] = [];
 
-	const flipDurationMs = 200;
-	const dropTargetStyle = {};
-	let dragDisabled = true;
-
 	const dispatch = createEventDispatcher();
-
-	function handleConsider(e: any) {
-		const {
-			items: newItems,
-			info: { source, trigger }
-		} = e.detail;
-		items = newItems;
-		// Ensure dragging is stopped on drag finish via keyboard
-		if (source === SOURCES.KEYBOARD && trigger === TRIGGERS.DRAG_STOPPED) {
-			dragDisabled = true;
-		}
-	}
-	function handleFinalize(e: any) {
-		const {
-			items: newItems,
-			info: { source }
-		} = e.detail;
-		items = newItems;
-		// Ensure dragging is stopped on drag finish via pointer (mouse, touch)
-		if (source === SOURCES.POINTER) {
-			dragDisabled = true;
-		}
-		dispatch('listUpdated', {
-			items
-		});
-	}
-	function startDrag(e: any) {
-		// preventing default to prevent lag on touch devices (because of the browser checking for screen scrolling)
-		e.preventDefault();
-		dragDisabled = false;
-	}
-	function handleKeyDown(e: any) {
-		if ((e.key === 'Enter' || e.key === ' ') && dragDisabled) dragDisabled = false;
-	}
 
 	function editSection(id: number) {
 		dispatch('editSection', {
@@ -56,26 +17,37 @@
 			id
 		});
 	}
+
+	function moveElement(array: any[], fromIndex: any, toIndex: any) {
+		// Remove the element from its current position
+		const element = array.splice(fromIndex, 1)[0];
+
+		// Insert the element at the new position
+		array.splice(toIndex, 0, element);
+
+		return array;
+	}
+
+	onMount(() => {
+		let el: HTMLElement = document.getElementById('items') as HTMLElement;
+		new Sortable(el, {
+			handle: '.handle',
+			animation: 150,
+			onEnd: function (evt) {
+				items = moveElement(items, evt.oldIndex, evt.newIndex);
+				dispatch('listUpdated', {
+					items
+				});
+			}
+		});
+	});
 </script>
 
-<div
-	class="w-full flex flex-col gap-2"
-	use:dndzone={{ items, dragDisabled, flipDurationMs, dropTargetStyle }}
-	on:consider={handleConsider}
-	on:finalize={handleFinalize}
->
+<div id="items" class="w-full flex flex-col gap-2">
 	{#each items as item (item.id)}
-		<div class="flex" animate:flip={{ duration: flipDurationMs }}>
-			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<div class="flex">
 			<div
-				tabindex={dragDisabled ? 0 : -1}
-				aria-label="drag-handle"
-				style={dragDisabled ? 'cursor: grab' : 'cursor: grabbing'}
-				on:mousedown={startDrag}
-				on:touchstart={startDrag}
-				on:keydown={handleKeyDown}
-				class="bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white p-4 border flex rounded-l-lg"
+				class="handle bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white p-4 border flex rounded-l-lg hover:cursor-grab"
 			>
 				<DotsVerticalOutline class="w-6 h-6" />
 				<DotsVerticalOutline class="w-6 h-6 -ml-4" />
