@@ -6,6 +6,8 @@
 
 	export let items: any[] = [];
 
+	let itemsDiv: HTMLElement;
+
 	const dispatch = createEventDispatcher();
 
 	function editSection(id: number) {
@@ -30,8 +32,7 @@
 	}
 
 	onMount(() => {
-		let el: HTMLElement = document.getElementById('items') as HTMLElement;
-		new Sortable(el, {
+		new Sortable(itemsDiv, {
 			handle: '.handle',
 			animation: 150,
 			onEnd: function (evt) {
@@ -44,7 +45,7 @@
 	});
 </script>
 
-<div id="items" class="w-full flex flex-col gap-2">
+<div bind:this={itemsDiv} class="w-full flex flex-col gap-2">
 	{#each items as item (item.id)}
 		<div class="flex" animate:flip={{ duration: 200 }}>
 			<div
