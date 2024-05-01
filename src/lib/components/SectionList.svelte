@@ -2,11 +2,9 @@
 	import Sortable from 'sortablejs';
 	import { flip } from 'svelte/animate';
 	import { TrashBinOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
-	import { createEventDispatcher, onMount } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 
 	export let items: any[] = [];
-
-	let itemsDiv: HTMLElement;
 
 	const dispatch = createEventDispatcher();
 
@@ -31,8 +29,8 @@
 		return array;
 	}
 
-	onMount(() => {
-		new Sortable(itemsDiv, {
+	function sortable(element: HTMLElement) {
+		new Sortable(element, {
 			handle: '.handle',
 			animation: 150,
 			onEnd: function (evt) {
@@ -42,10 +40,10 @@
 				});
 			}
 		});
-	});
+	}
 </script>
 
-<div bind:this={itemsDiv} class="w-full flex flex-col gap-2">
+<div use:sortable class="w-full flex flex-col gap-2">
 	{#each items as item (item.id)}
 		<div class="flex" animate:flip={{ duration: 200 }}>
 			<div
