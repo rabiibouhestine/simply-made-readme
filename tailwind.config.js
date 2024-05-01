@@ -8,6 +8,9 @@ const config = {
 
   theme: {
     extend: {
+      height: {
+        'fs': 'calc(100vh - 150px)',
+      },
       colors: {
         // flowbite-svelte
         primary: {

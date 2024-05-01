@@ -151,7 +151,7 @@
 	</div>
 
 	<div
-		class="lg:full-height container mx-auto w-full flex flex-col lg:flex-row gap-6 justify-between py-6"
+		class="h-full lg:h-fs container mx-auto w-full flex flex-col lg:flex-row gap-6 justify-between py-6"
 	>
 		{#if showTextEditor}
 			<div class="w-full h-full">
@@ -300,9 +300,3 @@
 <Modal bind:open={showCopyModal} size="xs" autoclose>
 	<ExportModal message="Readme Copied to Clipboard" />
 </Modal>
-
-<style>
-	.full-height {
-		height: calc(100vh - 150px);
-	}
-</style>
