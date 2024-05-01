@@ -33,8 +33,8 @@
 			Choose a Template
 		</Heading>
 		<P class="mb-6 text-center text-lg lg:text-xl px-16  dark:text-gray-400">
-			Find the ideal template to highlight your expertise and qualifications from our curated
-			selection of professional resume templates.
+			Pick the template that fits your needs. You can add/remove sections and edit as needed.
+			Template suggestions are welcome.
 		</P>
 	</div>
 	<div class="grid grid-cols-3 gap-8">
