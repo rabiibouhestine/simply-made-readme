@@ -37,7 +37,7 @@
 			Template suggestions are welcome.
 		</P>
 	</div>
-	<div class="grid grid-cols-3 gap-8">
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 		{#each types as type}
 			<a href={type.link} class="flex flex-col gap-2 items-center group">
 				<img
