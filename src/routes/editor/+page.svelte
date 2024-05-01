@@ -132,13 +132,13 @@
 
 <div class="grow flex flex-col">
 	<div
-		class="container mx-auto w-full flex justify-between border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2"
+		class="container mx-auto w-full flex flex-col md:flex-row gap-2 justify-between border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2"
 	>
 		<Button on:click={() => (showNewReadmeModal = true)} color="light">
 			<InfoCircleOutline class="w-4 h-4 me-2" />
 			New Readme
 		</Button>
-		<div class="flex gap-2">
+		<div class="flex flex-col md:flex-row gap-2">
 			<Button on:click={handleCopy} color="light">
 				<ClipboardSolid class="w-4 h-4 me-2" />
 				Copy
@@ -150,7 +150,9 @@
 		</div>
 	</div>
 
-	<div class="full-height container mx-auto w-full flex gap-6 justify-between py-6">
+	<div
+		class="lg:full-height container mx-auto w-full flex flex-col lg:flex-row gap-6 justify-between py-6"
+	>
 		{#if showTextEditor}
 			<div class="w-full h-full">
 				<div
@@ -217,13 +219,13 @@
 		{/if}
 		<div class="flex flex-col gap-4 w-full">
 			<div
-				class="markdown-body-dark w-full h-full rounded-lg border p-4 overflow-scroll hidden dark:block border-gray-700"
+				class="markdown-body-dark w-full h-full rounded-lg border p-4 lg:overflow-scroll hidden dark:block border-gray-700"
 			>
 				{@html GithubDark}
 				{@html marked.parse(concatenatedMarkdown)}
 			</div>
 			<div
-				class="markdown-body w-full h-full rounded-lg border p-4 overflow-scroll block dark:hidden"
+				class="markdown-body w-full h-full rounded-lg border p-4 lg:overflow-scroll block dark:hidden"
 			>
 				{@html GithubLight}
 				{@html marked.parse(concatenatedMarkdown)}
