@@ -14,6 +14,10 @@ const style = `
   word-wrap: break-word;
 }
 
+.markdown-body ul {
+  list-style-type: disc;
+}
+
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;

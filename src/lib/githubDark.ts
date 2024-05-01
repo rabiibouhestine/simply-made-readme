@@ -15,6 +15,10 @@ const style = `
   word-wrap: break-word;
 }
 
+.markdown-body-dark ul {
+  list-style-type: disc;
+}
+
 .markdown-body-dark .octicon {
   display: inline-block;
   fill: currentColor;
