@@ -9,17 +9,6 @@
 	import premadeSections from '$lib/sections';
 	import GithubLight from '$lib/githubLight';
 	import GithubDark from '$lib/githubDark';
-
-	marked.use({
-		gfm: true
-	});
-
-	let template = $page.url.searchParams.get('template') || '';
-	let templateSectionsIDS: any[] = (templates as any)[template];
-	let sections: any[] = templateSectionsIDS.map((id) =>
-		premadeSections.find((section) => section.id === id)
-	);
-
 	import {
 		InfoCircleOutline,
 		ExclamationCircleOutline,
@@ -28,6 +17,17 @@
 		CirclePlusOutline,
 		CloseCircleSolid
 	} from 'flowbite-svelte-icons';
+
+	marked.use({
+		gfm: true
+	});
+
+	let template = $page.url.searchParams.get('template') || '';
+	let templateSectionsIDS: any[] = (templates as any)[template];
+	let sections: any[] = templateSectionsIDS.map((id) => {
+		let section = premadeSections.find((section) => section.id === id);
+		return { ...section };
+	});
 
 	let showTextEditor = false;
 
